@@ -36,7 +36,7 @@
 ;;; Code:
 
 (deftheme cinder-grove
-  "Cinder Grove: warm, muted dark theme with ember-orange accents."
+  "Cinder Muted: a Doom Emacs dark theme in muted ember tones."
   :background-mode 'dark
   :kind 'color-scheme)
 
@@ -774,6 +774,7 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(which-key-separator-face ((t (:foreground ,cinder-grove-muted))))
  `(which-key-note-face ((t (:inherit shadow :italic t))))
  `(dashboard-banner-logo-title ((t (:foreground ,cinder-grove-orange :bold t))))
+ `(doom-dashboard-default ((t (:background ,cinder-grove-bg :foreground ,cinder-grove-fg))))
  `(dashboard-items-face ((t (:foreground ,cinder-grove-fg))))
  `(dashboard-heading ((t (:foreground ,cinder-grove-orange :bold t))))
  `(dashboard-navigator-face ((t (:foreground ,cinder-grove-blue))))

@@ -6,7 +6,7 @@ Web pages theme through the [Dark Reader](https://darkreader.org/) extension.
 
 Enable the prototype design first: Settings -> Advanced -> Dev tools -> Click "Enable design prototype"
 
-- Background: `#16110F`
-- Scrollbar: `#624F46`
-- Text: `#ECCFC1`
-- Selection: `#46372F`
+- Background: `#15110F`
+- Scrollbar: `#5F5049`
+- Text: `#C5AFA4`
+- Selection: `#443831`

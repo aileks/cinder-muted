@@ -1,8 +1,8 @@
-# Cinder Muted for Emacs
+# Cinder Muted for Doom Emacs
 
-A single-file custom theme covering built-in faces plus corfu, vertico, magit, org, and more. The `cg-transparent` option from cinder-grove.el works unchanged.
+A Doom Emacs dark theme in muted ember tones. Set `cm-transparent` to true for a transparent background.
 
-## Doom Emacs
+## Install
 
 ```elisp
 ;; packages.el
@@ -18,19 +18,4 @@ A single-file custom theme covering built-in faces plus corfu, vertico, magit, o
 
 Run `doom sync` after adding the recipe.
 
-## straight.el
-
-```elisp
-(straight-use-package
- '(cinder-muted-theme :type git :host github :repo "aileks/cinder-muted"
-   :files ("emacs/cinder-muted-theme.el")))
-```
-
-## Manual
-
-Download `emacs/cinder-muted-theme.el` from the repo, then:
-
-```elisp
-(add-to-list 'custom-theme-load-path "/path/to/dir-containing-cinder-muted-theme-el")
-(load-theme 'cinder-muted t)
-```
+The theme overrides `doom-dashboard-default` so the dashboard canvas matches editing buffers.
