@@ -7,7 +7,8 @@ A single-file custom theme covering built-in faces plus corfu, vertico, magit, o
 ```elisp
 ;; packages.el
 (package! cinder-muted
-  :recipe (:host github :repo "aileks/cinder-muted"))
+  :recipe (:host github :repo "aileks/cinder-muted"
+           :files ("emacs/cinder-muted-theme.el")))
 ```
 
 ```elisp
@@ -21,16 +22,15 @@ Run `doom sync` after adding the recipe.
 
 ```elisp
 (straight-use-package
- '(cinder-muted :type git :host github :repo "aileks/cinder-muted"))
-
-(setq doom-theme 'cinder-muted)
+ '(cinder-muted-theme :type git :host github :repo "aileks/cinder-muted"
+   :files ("emacs/cinder-muted-theme.el")))
 ```
 
 ## Manual
 
-Download `cinder-muted-theme.el` from the repo root, then:
+Download `emacs/cinder-muted-theme.el` from the repo, then:
 
 ```elisp
-(add-to-list 'custom-theme-load-path "/path/to/dir-with-cinder-muted-theme-el")
+(add-to-list 'custom-theme-load-path "/path/to/dir-containing-cinder-muted-theme-el")
 (load-theme 'cinder-muted t)
 ```

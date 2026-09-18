@@ -12,8 +12,8 @@ Each port has its own README with install instructions.
 
 | App | Files | Install |
 | --- | --- | --- |
-| [Neovim](docs/nvim.md) | `colors/`, `lua/` at the repo root | plugin manager or local runtimepath |
-| [Emacs](docs/emacs.md) | `cinder-muted-theme.el` at the repo root | package recipe or manual |
+| [Neovim](https://github.com/aileks/cinder-muted.nvim) | separate repo, submodule at `nvim/` | plugin manager or local runtimepath |
+| [Emacs](emacs/README.md) | `emacs/cinder-muted-theme.el` | package recipe or manual |
 | [Xresources](xresources/README.md) | `xresources/cinder-muted.xrdb` | include or paste into `~/.Xresources` |
 | [GTK 3/4](gtk/README.md) | `gtk/Cinder-Muted-Dark/` | `gtk/install.sh` |
 | [Stylus](stylus/README.md) | `stylus/cinder-muted.user.css` | import into the Stylus extension |
@@ -23,7 +23,7 @@ Each port has its own README with install instructions.
 | [bat](bat/README.md) | `bat/cinder-muted.tmTheme` | copy, rebuild cache, set `--theme` |
 | [yazi](yazi/README.md) | `yazi/theme.toml`, `yazi/cinder-muted.tmTheme` | copy to `~/.config/yazi/` |
 
-The repo root doubles as the Neovim plugin and the Emacs package, so both plugin managers consume it straight from git. Cinder Muted installs side by side with Cinder Grove everywhere.
+The Neovim port lives in its own repository and is tracked here as a submodule at `nvim/`; Emacs consumes `emacs/cinder-muted-theme.el` through the recipe in its README. Cinder Muted installs side by side with Cinder Grove everywhere.
 
 ## Development
 
@@ -38,6 +38,7 @@ pnpm test
 - `templates/` holds verbatim copies of the Cinder Grove config files each renderer starts from. When a grove port changes, copy the new file in and re-render.
 - Generated files carry a "do not edit" note and are committed at their final paths so apps can consume them without a Node toolchain.
 - `applyTones` throws on any color it does not recognize, so a grove update with new colors fails the build instead of leaking old colors.
+- The Neovim palette renders into the `nvim/` submodule; after palette changes, commit inside the submodule, then commit the new pointer here.
 
 ## License
 

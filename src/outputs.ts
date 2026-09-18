@@ -18,8 +18,8 @@ export function renderOutputs(): Map<string, string> {
 
   return new Map([
     ['palette.svg', renderSvg(p)],
-    ['lua/cinder-muted/palette.lua', renderNvimPalette(p)],
-    ['cinder-muted-theme.el', renderEmacs(template('emacs/cinder-grove-theme.el'), tones)],
+    ['nvim/lua/cinder-muted/palette.lua', renderNvimPalette(p)],
+    ['emacs/cinder-muted-theme.el', renderEmacs(template('emacs/cinder-grove-theme.el'), tones)],
     ['xresources/cinder-muted.xrdb', renderXresources(p)],
     ['gtk/Cinder-Muted-Dark/index.theme', gtk.renderGtkIndex()],
     ['gtk/Cinder-Muted-Dark/gtk-3.0/gtk.css', gtk.GTK3_MAIN_CSS],

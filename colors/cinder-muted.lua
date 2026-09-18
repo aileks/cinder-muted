@@ -1,1 +1,0 @@
-require('cinder-muted').load()
