@@ -118,13 +118,13 @@
   <g transform="translate(360 360)">
     <rect width="180" height="120" fill="#bd6532" />
     <text class="hex" x="90" y="48" fill="#16110f">#BD6532</text>
-    <text class="name" x="90" y="74" fill="#16110f">purple</text>
+    <text class="name" x="90" y="74" fill="#16110f">purple (ANSI)</text>
   </g>
 
   <g transform="translate(540 360)">
     <rect width="180" height="120" fill="#ce7442" />
     <text class="hex" x="90" y="48" fill="#16110f">#CE7442</text>
-    <text class="name" x="90" y="74" fill="#16110f">cyan</text>
+    <text class="name" x="90" y="74" fill="#16110f">cyan (ANSI)</text>
   </g>
 
   <text class="knobs" x="360" y="504">seed L 0.685 C 0.147 H 48.2  |  accentChroma 0.13  |  accentLadder 0.8-0.55  |  neutralChromaScale 2.2  |  errorChromaScale 0.75</text>

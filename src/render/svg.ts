@@ -19,8 +19,8 @@ const SWATCHES: { slot: SourceSlot; label: string }[] = [
   { slot: 'secondary', label: 'secondary' },
   { slot: 'warning', label: 'warning' },
   { slot: 'info', label: 'info' },
-  { slot: 'purple', label: 'purple' },
-  { slot: 'cyan', label: 'cyan' },
+  { slot: 'purple', label: 'purple (ANSI)' },
+  { slot: 'cyan', label: 'cyan (ANSI)' },
 ]
 
 const DARK_SLOTS = new Set<string>([
