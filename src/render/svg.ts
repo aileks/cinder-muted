@@ -2,9 +2,9 @@ import { KNOBS, seed, type GroveSlot } from '../palette.ts'
 
 const SWATCH_WIDTH = 180
 const SWATCH_HEIGHT = 120
-const PER_ROW = 5
+const PER_ROW = 4
 
-// Grouped by role: surfaces, text, accents, then the red exception.
+// Grouped by role: surfaces, text, accents, then error.
 const SWATCHES: { slot: GroveSlot; label: string }[] = [
   { slot: 'background', label: 'background' },
   { slot: 'container', label: 'container' },
@@ -15,7 +15,7 @@ const SWATCHES: { slot: GroveSlot; label: string }[] = [
   { slot: 'text_secondary', label: 'text secondary' },
   { slot: 'text', label: 'text' },
   { slot: 'text_bright', label: 'text bright' },
-  { slot: 'error', label: 'error (red exception)' },
+  { slot: 'error', label: 'error' },
   { slot: 'primary', label: 'primary' },
   { slot: 'secondary', label: 'secondary' },
   { slot: 'warning', label: 'warning' },
@@ -24,6 +24,14 @@ const SWATCHES: { slot: GroveSlot; label: string }[] = [
   { slot: 'cyan', label: 'cyan' },
 ]
 
+const DARK_SLOTS = new Set<string>([
+  'background',
+  'container',
+  'surface',
+  'visual',
+  'overlay',
+])
+
 export function renderSvg(palette: Record<GroveSlot, string>): string {
   const rows = Math.ceil(SWATCHES.length / PER_ROW)
   const footerHeight = 36
@@ -31,18 +39,15 @@ export function renderSvg(palette: Record<GroveSlot, string>): string {
   const height = SWATCH_HEIGHT * rows + footerHeight
   const s = seed()
 
-  const swatchSvg = SWATCHES.map(({ slot, label }, index) => {
+  const swatches = SWATCHES.map(({ slot, label }, index) => {
     const hex = palette[slot]
     const x = (index % PER_ROW) * SWATCH_WIDTH
     const y = Math.floor(index / PER_ROW) * SWATCH_HEIGHT
-    const textFill =
-      slot === 'background' || slot === 'container' || slot === 'surface' || slot === 'visual'
-        ? palette.text_bright
-        : palette.background
+    const fill = DARK_SLOTS.has(slot) ? palette.text_bright : palette.background
     return `  <g transform="translate(${x} ${y})">
     <rect width="${SWATCH_WIDTH}" height="${SWATCH_HEIGHT}" fill="${hex}" />
-    <text class="hex" x="${SWATCH_WIDTH / 2}" y="48" fill="${textFill}">${hex.toUpperCase()}</text>
-    <text class="name" x="${SWATCH_WIDTH / 2}" y="74" fill="${textFill}">${label}</text>
+    <text class="hex" x="${SWATCH_WIDTH / 2}" y="48" fill="${fill}">${hex.toUpperCase()}</text>
+    <text class="name" x="${SWATCH_WIDTH / 2}" y="74" fill="${fill}">${label}</text>
   </g>`
   }).join('\n\n')
 
@@ -63,7 +68,7 @@ export function renderSvg(palette: Record<GroveSlot, string>): string {
   aria-labelledby="title desc"
 >
   <title id="title">Cinder Muted color palette</title>
-  <desc id="desc">Tones of a single muted gold blended from Cinder Grove's primary and secondary, with a red exception for errors.</desc>
+  <desc id="desc">Tones of a single muted ember blended from Cinder Grove's primary and secondary, with a red exception for errors.</desc>
 
   <style>
     .hex {
@@ -87,7 +92,7 @@ export function renderSvg(palette: Record<GroveSlot, string>): string {
     }
   </style>
 
-${swatchSvg}
+${swatches}
 
   <text class="knobs" x="${width / 2}" y="${height - 12}">${knobs}</text>
 </svg>

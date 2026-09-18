@@ -1,13 +1,13 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="900"
+  width="720"
   height="516"
-  viewBox="0 0 900 516"
+  viewBox="0 0 720 516"
   role="img"
   aria-labelledby="title desc"
 >
   <title id="title">Cinder Muted color palette</title>
-  <desc id="desc">Tones of a single muted gold blended from Cinder Grove's primary and secondary, with a red exception for errors.</desc>
+  <desc id="desc">Tones of a single muted ember blended from Cinder Grove's primary and secondary, with a red exception for errors.</desc>
 
   <style>
     .hex {
@@ -55,77 +55,77 @@
     <text class="name" x="90" y="74" fill="#eccfc1">visual</text>
   </g>
 
-  <g transform="translate(720 0)">
+  <g transform="translate(0 120)">
     <rect width="180" height="120" fill="#624f46" />
-    <text class="hex" x="90" y="48" fill="#16110f">#624F46</text>
-    <text class="name" x="90" y="74" fill="#16110f">overlay</text>
+    <text class="hex" x="90" y="48" fill="#eccfc1">#624F46</text>
+    <text class="name" x="90" y="74" fill="#eccfc1">overlay</text>
   </g>
 
-  <g transform="translate(0 120)">
+  <g transform="translate(180 120)">
     <rect width="180" height="120" fill="#a78e82" />
     <text class="hex" x="90" y="48" fill="#16110f">#A78E82</text>
     <text class="name" x="90" y="74" fill="#16110f">text subtle</text>
   </g>
 
-  <g transform="translate(180 120)">
+  <g transform="translate(360 120)">
     <rect width="180" height="120" fill="#b99f93" />
     <text class="hex" x="90" y="48" fill="#16110f">#B99F93</text>
     <text class="name" x="90" y="74" fill="#16110f">text secondary</text>
   </g>
 
-  <g transform="translate(360 120)">
+  <g transform="translate(540 120)">
     <rect width="180" height="120" fill="#c9aea0" />
     <text class="hex" x="90" y="48" fill="#16110f">#C9AEA0</text>
     <text class="name" x="90" y="74" fill="#16110f">text</text>
   </g>
 
-  <g transform="translate(540 120)">
+  <g transform="translate(0 240)">
     <rect width="180" height="120" fill="#eccfc1" />
     <text class="hex" x="90" y="48" fill="#16110f">#ECCFC1</text>
     <text class="name" x="90" y="74" fill="#16110f">text bright</text>
   </g>
 
-  <g transform="translate(720 120)">
+  <g transform="translate(180 240)">
     <rect width="180" height="120" fill="#a45751" />
     <text class="hex" x="90" y="48" fill="#16110f">#A45751</text>
-    <text class="name" x="90" y="74" fill="#16110f">error (red exception)</text>
+    <text class="name" x="90" y="74" fill="#16110f">error</text>
   </g>
 
-  <g transform="translate(0 240)">
+  <g transform="translate(360 240)">
     <rect width="180" height="120" fill="#f09361" />
     <text class="hex" x="90" y="48" fill="#16110f">#F09361</text>
     <text class="name" x="90" y="74" fill="#16110f">primary</text>
   </g>
 
-  <g transform="translate(180 240)">
+  <g transform="translate(540 240)">
     <rect width="180" height="120" fill="#df8452" />
     <text class="hex" x="90" y="48" fill="#16110f">#DF8452</text>
     <text class="name" x="90" y="74" fill="#16110f">secondary</text>
   </g>
 
-  <g transform="translate(360 240)">
+  <g transform="translate(0 360)">
     <rect width="180" height="120" fill="#ffa474" />
     <text class="hex" x="90" y="48" fill="#16110f">#FFA474</text>
     <text class="name" x="90" y="74" fill="#16110f">warning</text>
   </g>
 
-  <g transform="translate(540 240)">
+  <g transform="translate(180 360)">
     <rect width="180" height="120" fill="#ac5621" />
     <text class="hex" x="90" y="48" fill="#16110f">#AC5621</text>
     <text class="name" x="90" y="74" fill="#16110f">info</text>
   </g>
 
-  <g transform="translate(720 240)">
+  <g transform="translate(360 360)">
     <rect width="180" height="120" fill="#bd6532" />
     <text class="hex" x="90" y="48" fill="#16110f">#BD6532</text>
     <text class="name" x="90" y="74" fill="#16110f">purple</text>
   </g>
 
-  <g transform="translate(0 360)">
+  <g transform="translate(540 360)">
     <rect width="180" height="120" fill="#ce7442" />
     <text class="hex" x="90" y="48" fill="#16110f">#CE7442</text>
     <text class="name" x="90" y="74" fill="#16110f">cyan</text>
   </g>
 
-  <text class="knobs" x="450" y="504">seed L 0.685 C 0.147 H 48.2  |  accentChroma 0.13  |  accentLadder 0.8-0.55  |  neutralChromaScale 2.2  |  errorChromaScale 0.75</text>
+  <text class="knobs" x="360" y="504">seed L 0.685 C 0.147 H 48.2  |  accentChroma 0.13  |  accentLadder 0.8-0.55  |  neutralChromaScale 2.2  |  errorChromaScale 0.75</text>
 </svg>
