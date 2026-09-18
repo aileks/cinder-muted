@@ -29,8 +29,7 @@ pnpm test
 ```
 
 - `src/palette.ts` derives the palette from the Cinder Grove source colors; the tuning knobs (seed blend, chroma levels, accent ladder, error strength) live in `KNOBS`.
-- `templates/` holds verbatim copies of the Cinder Grove config files each renderer starts from. When a grove port changes, copy the new file in and re-render.
-- Generated files carry an "Auto-generated file. Do not edit!" note and are committed at their final paths so apps can consume them without a Node toolchain.
+- `templates/` holds verbatim copies of the Cinder Grove config files each renderer starts from. When a port changes, copy the new file in and re-render.
 - `applyTones` throws on any color it does not recognize, so new upstream colors fail the build instead of leaking old colors.
 - The Neovim palette renders into the `nvim/` submodule; after palette changes, commit inside the submodule, then commit the new pointer here.
 
