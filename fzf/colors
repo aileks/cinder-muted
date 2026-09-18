@@ -1,0 +1,16 @@
+# Auto-generated file. Do not edit!
+  --color=fg:#b5a196
+  --color=fg+:#e9d1c5
+  --color=bg:#15110f
+  --color=bg+:#382f2b
+  --color=hl:#c2764e
+  --color=hl+:#ffbd9b
+  --color=info:#b5a196
+  --color=marker:#c2764e
+  --color=prompt:#c2764e
+  --color=spinner:#f1a278
+  --color=pointer:#ffbd9b
+  --color=header:#a45751
+  --color=border:#b5a196
+  --color=query:#e9d1c5
+  --color=gutter:#15110f

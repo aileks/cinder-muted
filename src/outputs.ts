@@ -46,5 +46,14 @@ export function renderOutputs(): Map<string, string> {
       'yazi/cinder-muted.tmTheme',
       configs.renderYaziTheme(template('yazi/template.tmTheme'), tones),
     ],
+    ['dunst/dunstrc', configs.renderDunst(template('dunst/template'), tones)],
+    ['rofi/config.rasi', configs.renderRofi(template('rofi/template.rasi'), tones)],
+    ['st/config.def.h', configs.renderStHeader(template('st/template.h'), tones)],
+    ['st/config.h', configs.renderStHeader(template('st/template.h'), tones)],
+    ['fzf/colors', configs.renderFzf(template('fzf/template'), tones)],
+    [
+      'i3lock-color/cinder-muted.sh',
+      configs.renderI3lock(template('i3lock-color/cinder-muted.sh'), tones),
+    ],
   ])
 }

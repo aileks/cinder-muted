@@ -141,6 +141,7 @@ export function toneMap(): Map<string, string> {
     '#171613', // qt6ct deep bg
     '#706A62', // qt6ct disabled text
     '#878077', // qt6ct disabled highlight
+    '#DC8853', // fzf spinner
   ]
   const derive = (hex: string): string => {
     if (hex.toLowerCase() === SOURCE_COLORS.error) return errorFromHex(hex)

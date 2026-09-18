@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { palette } from './palette.ts'
 import { applyTones } from './render/substitute.ts'
+import { renderI3lock } from './render/configs.ts'
 import { renderXresources } from './render/xresources.ts'
 
 const tones = new Map([
@@ -42,5 +43,20 @@ describe('renderXresources', () => {
     const lines = renderXresources(palette()).trim().split('\n')
     expect(lines).toHaveLength(20)
     expect(lines.at(-1)).toMatch(/^\*\.color15:\s+#[0-9A-F]{6}$/)
+  })
+})
+
+describe('renderI3lock', () => {
+  it('replaces bare hexes and preserves the ff alpha suffix', () => {
+    const tones = new Map([
+      ['#131210', '#15110f'],
+      ['#879b5c', '#d98c63'],
+    ])
+    const out = renderI3lock('i3lock -c 131210 --ring-color=879b5cff', tones)
+    expect(out).toBe('i3lock -c 15110f --ring-color=d98c63ff')
+  })
+
+  it('throws on colors outside the tone map', () => {
+    expect(() => renderI3lock('--keyhlcolor=123456ff', new Map())).toThrow(/tone map/)
   })
 })

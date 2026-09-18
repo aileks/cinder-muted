@@ -49,7 +49,7 @@
 (defconst cinder-muted-purple    "#ab6139")
 (defconst cinder-muted-cyan      "#c2764e")
 
-(defcustom cm-transparent nil
+(defcustom cg-transparent nil
   "Use the terminal's default background when non-nil.
 GUI frames always use the theme's dark canvas; set the frame
 parameter `alpha-background' separately for GUI transparency.
@@ -59,14 +59,14 @@ Popup faces retain explicit backgrounds.  Reload the theme with
   :group 'cinder-muted)
 
 ;; Match the terminal canvas without changing frame defaults outside the theme.
-(let ((tty-background (if cm-transparent "unspecified-bg" cinder-muted-bg)))
+(let ((tty-background (if cg-transparent "unspecified-bg" cinder-muted-bg)))
   (custom-theme-set-faces
    'cinder-muted
    `(default ((((type tty)) (:background ,tty-background
-                             :foreground ,cinder-muted-fg))
+                            :foreground ,cinder-muted-fg))
               (t (:background ,cinder-muted-bg :foreground ,cinder-muted-fg))))
    `(fringe ((((type tty)) (:background ,tty-background
-                            :foreground ,cinder-muted-muted))
+                           :foreground ,cinder-muted-muted))
              (t (:background ,cinder-muted-bg :foreground ,cinder-muted-muted))))))
 
 (custom-theme-set-faces
@@ -87,30 +87,30 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(fill-column-indicator ((t (:foreground ,cinder-muted-visual))))
  `(line-number ((t (:foreground ,cinder-muted-muted :background unspecified))))
  `(line-number-current-line ((t (:foreground ,cinder-muted-orange
-                                 :background ,cinder-muted-surface
-                                 :bold t))))
+                                             :background ,cinder-muted-surface
+                                             :bold t))))
  `(minibuffer-prompt ((t (:foreground ,cinder-muted-orange :bold t))))
  `(trailing-whitespace ((t (:background ,cinder-muted-surface))))
  `(show-paren-match ((t (:background ,cinder-muted-visual :bold t))))
  `(show-paren-mismatch ((t (:foreground ,cinder-muted-bg
-                            :background ,cinder-muted-red))))
+                                         :background ,cinder-muted-red))))
  `(match ((t (:background ,cinder-muted-surface
-              :foreground ,cinder-muted-orange))))
+                          :foreground ,cinder-muted-orange))))
 
  ;; --- search -------------------------------------------------------------------
  `(isearch ((t (:background ,cinder-muted-orange :foreground ,cinder-muted-bg))))
  `(isearch-fail ((t (:foreground ,cinder-muted-red :underline t))))
  `(lazy-highlight ((t (:background ,cinder-muted-visual
-                       :foreground ,cinder-muted-bright))))
+                                   :foreground ,cinder-muted-bright))))
  `(query-replace ((t (:inherit isearch))))
 
  ;; --- mode-line, header-line, tab-bar ---------------------------------------------
  `(mode-line ((t (:background ,cinder-muted-container
-                  :foreground ,cinder-muted-bright
-                  :box (:color ,cinder-muted-muted)))))
+                              :foreground ,cinder-muted-bright
+                              :box (:color ,cinder-muted-muted)))))
  `(mode-line-inactive ((t (:background ,cinder-muted-surface
-                           :foreground ,cinder-muted-subtle
-                           :box (:color ,cinder-muted-container)))))
+                                       :foreground ,cinder-muted-subtle
+                                       :box (:color ,cinder-muted-container)))))
  `(mode-line-active ((t (:inherit mode-line))))
  `(mode-line-buffer-id ((t (:foreground ,cinder-muted-orange :bold t))))
  `(mode-line-highlight ((t (:foreground ,cinder-muted-orange))))
@@ -118,11 +118,11 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(header-line ((t (:inherit mode-line))))
  `(header-line-highlight ((t (:inherit mode-line-highlight))))
  `(tab-bar ((t (:background ,cinder-muted-container
-                :foreground ,cinder-muted-subtle))))
+                            :foreground ,cinder-muted-subtle))))
  `(tab-bar-tab ((t (:background ,cinder-muted-surface
-                    :foreground ,cinder-muted-bright :weight bold))))
+                                :foreground ,cinder-muted-bright :weight bold))))
  `(tab-bar-tab-inactive ((t (:background ,cinder-muted-container
-                             :foreground ,cinder-muted-subtle))))
+                                         :foreground ,cinder-muted-subtle))))
  `(tab-bar-tab-group-current ((t (:foreground ,cinder-muted-orange :bold t))))
  `(tab-bar-tab-group-inactive ((t (:inherit tab-bar-tab-inactive))))
  `(tab-line ((t (:inherit tab-bar))))
@@ -131,7 +131,7 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(tab-line-tab-inactive ((t (:inherit tab-bar-tab-inactive))))
  `(tab-line-tab-inactive-alternate ((t (:inherit tab-line-tab-inactive))))
  `(tab-line-highlight ((t (:background ,cinder-muted-visual
-                           :foreground ,cinder-muted-bright))))
+                                       :foreground ,cinder-muted-bright))))
  `(tab-line-close-highlight ((t (:foreground ,cinder-muted-orange))))
 
  ;; --- doom-modeline ---------------------------------------------------------------
@@ -171,7 +171,7 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(doom-modeline-unread-number ((t (:foreground ,cinder-muted-orange :bold t))))
  `(doom-modeline-compilation ((t (:foreground ,cinder-muted-yellow))))
  `(doom-modeline-panel ((t (:background ,cinder-muted-orange
-                            :foreground ,cinder-muted-bg :bold t))))
+                                         :foreground ,cinder-muted-bg :bold t))))
  `(doom-modeline-persp-name ((t (:foreground ,cinder-muted-purple))))
  `(doom-modeline-workspace-name ((t (:foreground ,cinder-muted-orange :bold t))))
  `(doom-modeline-persp-buffer-not-in-persp
@@ -191,10 +191,10 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(solaire-default-face ((t (:inherit default :background ,cinder-muted-surface))))
  `(solaire-fringe-face ((t (:inherit fringe :background ,cinder-muted-surface))))
  `(solaire-header-line-face ((t (:inherit header-line
-                                 :background ,cinder-muted-surface))))
+                                :background ,cinder-muted-surface))))
  `(solaire-hl-line-face ((t (:inherit hl-line :background ,cinder-muted-visual))))
  `(solaire-line-number-face ((t (:inherit line-number
-                                 :background ,cinder-muted-surface))))
+                                :background ,cinder-muted-surface))))
  `(solaire-mode-line-face ((t (:inherit mode-line))))
  `(solaire-mode-line-active-face ((t (:inherit mode-line-active))))
  `(solaire-mode-line-inactive-face ((t (:inherit mode-line-inactive))))
@@ -258,34 +258,34 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(eglot-diagnostic-tag-deprecated-face ((t (:strike-through t))))
  `(eglot-inlay-hint-face ((t (:inherit shadow :height 0.8 :slant italic))))
  `(eglot-type-hint-face ((t (:inherit eglot-inlay-hint-face
-                             :foreground ,cinder-muted-yellow))))
+                           :foreground ,cinder-muted-yellow))))
  `(eglot-parameter-hint-face ((t (:inherit eglot-inlay-hint-face
-                                  :foreground ,cinder-muted-orange))))
+                                :foreground ,cinder-muted-orange))))
 
  ;; --- completions ---------------------------------------------------------------------
  `(completions-common-part ((t (:foreground ,cinder-muted-orange :bold t))))
  `(completions-first-difference ((t (:foreground ,cinder-muted-orange :bold t))))
  `(completions-annotations ((t (:inherit shadow :slant italic))))
  `(completions-highlight ((t (:background ,cinder-muted-visual
-                              :foreground ,cinder-muted-bright))))
+                             :foreground ,cinder-muted-bright))))
  `(completions-group-title ((t (:foreground ,cinder-muted-purple :weight bold))))
  `(completions-group-separator ((t (:foreground ,cinder-muted-muted
-                                    :strike-through t))))
+                                   :strike-through t))))
  `(corfu-default ((t (:background ,cinder-muted-container
-                      :foreground ,cinder-muted-fg))))
+                                  :foreground ,cinder-muted-fg))))
  `(corfu-current ((t (:background ,cinder-muted-visual
-                      :foreground ,cinder-muted-bright))))
+                                  :foreground ,cinder-muted-bright))))
  `(corfu-annotations ((t (:inherit completions-annotations))))
  `(corfu-deprecated ((t (:inherit shadow :strike-through t))))
  `(corfu-bar ((t (:background ,cinder-muted-muted))))
  `(corfu-border ((t (:background ,cinder-muted-orange))))
  `(corfu-echo ((t (:inherit completions-annotations))))
  `(corfu-popupinfo ((t (:background ,cinder-muted-container
-                        :foreground ,cinder-muted-secondary))))
+                                    :foreground ,cinder-muted-secondary))))
  `(corfu-quick1 ((t (:foreground ,cinder-muted-orange :bold t))))
  `(corfu-quick2 ((t (:foreground ,cinder-muted-yellow :bold t))))
  `(vertico-current ((t (:background ,cinder-muted-visual
-                        :foreground ,cinder-muted-bright))))
+                                    :foreground ,cinder-muted-bright))))
  `(vertico-group-title ((t (:inherit completions-group-title))))
  `(vertico-group-separator ((t (:foreground ,cinder-muted-muted))))
  `(orderless-match-face-0 ((t (:foreground ,cinder-muted-orange :bold t))))
@@ -325,7 +325,7 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(consult-line-number ((t (:inherit shadow))))
  `(embark-keybinding ((t (:foreground ,cinder-muted-orange :bold t))))
  `(embark-keybinding-repeat ((t (:foreground ,cinder-muted-orange :bold t
-                                 :underline t))))
+                                              :underline t))))
  `(embark-keymap ((t (:foreground ,cinder-muted-purple :bold t))))
  `(embark-target ((t (:foreground ,cinder-muted-yellow))))
  `(embark-selected ((t (:foreground ,cinder-muted-green :bold t))))
@@ -343,9 +343,9 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(dired-symlink ((t (:foreground ,cinder-muted-cyan))))
  `(dired-broken-symlink ((t (:foreground ,cinder-muted-red :bold t))))
  `(dired-flagged ((t (:foreground ,cinder-muted-red
-                      :background ,cinder-muted-surface))))
+                                  :background ,cinder-muted-surface))))
  `(dired-marked ((t (:foreground ,cinder-muted-green
-                     :background ,cinder-muted-surface))))
+                                 :background ,cinder-muted-surface))))
  `(dired-mark ((t (:foreground ,cinder-muted-orange :bold t))))
  `(dired-header ((t (:foreground ,cinder-muted-purple :bold t))))
  `(dired-special ((t (:foreground ,cinder-muted-yellow))))
@@ -364,11 +364,11 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(diredfl-compressed-file-suffix ((t (:foreground ,cinder-muted-yellow))))
  `(diredfl-ignored-file-name ((t (:foreground ,cinder-muted-muted))))
  `(diredfl-flag-mark ((t (:foreground ,cinder-muted-bg
-                          :background ,cinder-muted-orange :bold t))))
+                                       :background ,cinder-muted-orange :bold t))))
  `(diredfl-flag-mark-line ((t (:background ,cinder-muted-orange
-                               :foreground ,cinder-muted-bg))))
+                                           :foreground ,cinder-muted-bg))))
  `(diredfl-deletion ((t (:foreground ,cinder-muted-bg
-                         :background ,cinder-muted-red :bold t))))
+                                      :background ,cinder-muted-red :bold t))))
  `(diredfl-deletion-file-name ((t (:foreground ,cinder-muted-red))))
  `(diredfl-read-priv ((t (:inherit shadow))))
  `(diredfl-write-priv ((t (:inherit shadow))))
@@ -415,16 +415,16 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(diff-hl-delete ((t (:foreground ,cinder-muted-red))))
  `(diff-hl-insert ((t (:foreground ,cinder-muted-green))))
  `(diff-added ((t (:foreground ,cinder-muted-green
-                   :background ,cinder-muted-container))))
+                               :background ,cinder-muted-container))))
  `(diff-removed ((t (:foreground ,cinder-muted-red
-                     :background ,cinder-muted-container))))
+                                 :background ,cinder-muted-container))))
  `(diff-changed ((t (:foreground ,cinder-muted-yellow))))
  `(diff-refine-added ((t (:foreground ,cinder-muted-green :bold t))))
  `(diff-refine-removed ((t (:foreground ,cinder-muted-red :bold t))))
  `(diff-refine-changed ((t (:foreground ,cinder-muted-yellow :bold t))))
  `(diff-header ((t (:foreground ,cinder-muted-subtle))))
  `(diff-hunk-header ((t (:foreground ,cinder-muted-subtle
-                         :background ,cinder-muted-surface))))
+                                     :background ,cinder-muted-surface))))
  `(diff-file-header ((t (:foreground ,cinder-muted-orange :bold t))))
  `(magit-section-highlight ((t (:background ,cinder-muted-surface))))
  `(magit-section-heading ((t (:foreground ,cinder-muted-orange :bold t))))
@@ -440,74 +440,74 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(magit-log-author ((t (:foreground ,cinder-muted-blue))))
  `(magit-log-date ((t (:inherit shadow))))
  `(magit-diff-hunk-heading ((t (:foreground ,cinder-muted-subtle
-                                :background ,cinder-muted-container))))
+                                            :background ,cinder-muted-container))))
  `(magit-diff-hunk-heading-highlight ((t (:foreground ,cinder-muted-subtle
-                                          :background
-                                          ,cinder-muted-surface))))
+                                                      :background
+                                                      ,cinder-muted-surface))))
  `(magit-diff-added ((t (:foreground ,cinder-muted-green))))
  `(magit-diff-added-highlight ((t (:foreground ,cinder-muted-green
-                                   :background ,cinder-muted-surface))))
+                                               :background ,cinder-muted-surface))))
  `(magit-diff-removed ((t (:foreground ,cinder-muted-red))))
  `(magit-diff-removed-highlight ((t (:foreground ,cinder-muted-red
-                                     :background
-                                     ,cinder-muted-surface))))
+                                                 :background
+                                                 ,cinder-muted-surface))))
  `(magit-diff-context ((t (:foreground ,cinder-muted-secondary))))
  `(magit-diff-context-highlight ((t (:foreground ,cinder-muted-fg
-                                     :background
-                                     ,cinder-muted-surface))))
+                                                 :background
+                                                 ,cinder-muted-surface))))
  `(magit-diff-our ((t (:foreground ,cinder-muted-red))))
  `(magit-diff-their ((t (:foreground ,cinder-muted-green))))
  `(magit-diff-base ((t (:foreground ,cinder-muted-purple))))
  `(magit-diff-base-highlight ((t (:foreground ,cinder-muted-purple
-                                  :background
-                                  ,cinder-muted-surface))))
+                                              :background
+                                              ,cinder-muted-surface))))
  `(magit-diffstat-added ((t (:foreground ,cinder-muted-green))))
  `(magit-diffstat-removed ((t (:foreground ,cinder-muted-red))))
  `(git-commit-summary ((t (:foreground ,cinder-muted-bright))))
  `(ediff-current-diff-A ((t (:foreground ,cinder-muted-red
-                             :background ,cinder-muted-visual))))
+                                         :background ,cinder-muted-visual))))
  `(ediff-current-diff-B ((t (:foreground ,cinder-muted-green
-                             :background ,cinder-muted-visual))))
+                                         :background ,cinder-muted-visual))))
  `(ediff-current-diff-C ((t (:foreground ,cinder-muted-yellow
-                             :background ,cinder-muted-visual))))
+                                         :background ,cinder-muted-visual))))
  `(ediff-current-diff-Ancestor ((t (:foreground ,cinder-muted-subtle
-                                    :background
-                                    ,cinder-muted-visual))))
+                                                :background
+                                                ,cinder-muted-visual))))
  `(ediff-fine-diff-A ((t (:foreground ,cinder-muted-red :bold t
-                          :background ,cinder-muted-surface))))
+                                      :background ,cinder-muted-surface))))
  `(ediff-fine-diff-B ((t (:foreground ,cinder-muted-green :bold t
-                          :background ,cinder-muted-surface))))
+                                      :background ,cinder-muted-surface))))
  `(ediff-fine-diff-C ((t (:foreground ,cinder-muted-yellow :bold t
-                          :background ,cinder-muted-surface))))
+                                      :background ,cinder-muted-surface))))
  `(ediff-fine-diff-Ancestor ((t (:foreground ,cinder-muted-subtle
-                                 :background
-                                 ,cinder-muted-surface))))
+                                             :background
+                                             ,cinder-muted-surface))))
  `(ediff-even-diff-A ((t (:foreground ,cinder-muted-secondary
-                          :background ,cinder-muted-container))))
+                                      :background ,cinder-muted-container))))
  `(ediff-even-diff-B ((t (:foreground ,cinder-muted-secondary
-                          :background ,cinder-muted-container))))
+                                      :background ,cinder-muted-container))))
  `(ediff-even-diff-C ((t (:foreground ,cinder-muted-secondary
-                          :background ,cinder-muted-container))))
+                                      :background ,cinder-muted-container))))
  `(ediff-even-diff-Ancestor ((t (:foreground ,cinder-muted-secondary
-                                 :background
-                                 ,cinder-muted-container))))
+                                             :background
+                                             ,cinder-muted-container))))
  `(ediff-odd-diff-A ((t (:foreground ,cinder-muted-fg
-                         :background ,cinder-muted-surface))))
+                                     :background ,cinder-muted-surface))))
  `(ediff-odd-diff-B ((t (:foreground ,cinder-muted-fg
-                         :background ,cinder-muted-surface))))
+                                     :background ,cinder-muted-surface))))
  `(ediff-odd-diff-C ((t (:foreground ,cinder-muted-fg
-                         :background ,cinder-muted-surface))))
+                                     :background ,cinder-muted-surface))))
  `(ediff-odd-diff-Ancestor ((t (:foreground ,cinder-muted-fg
-                                :background
-                                ,cinder-muted-surface))))
+                                            :background
+                                            ,cinder-muted-surface))))
  `(smerge-upper ((t (:foreground ,cinder-muted-red
-                     :background ,cinder-muted-container))))
+                                 :background ,cinder-muted-container))))
  `(smerge-lower ((t (:foreground ,cinder-muted-green
-                     :background ,cinder-muted-container))))
+                                 :background ,cinder-muted-container))))
  `(smerge-base ((t (:foreground ,cinder-muted-purple
-                    :background ,cinder-muted-container))))
+                                :background ,cinder-muted-container))))
  `(smerge-markers ((t (:foreground ,cinder-muted-subtle
-                       :background ,cinder-muted-surface))))
+                                   :background ,cinder-muted-surface))))
  `(smerge-refined-added ((t (:foreground ,cinder-muted-green :bold t))))
  `(smerge-refined-removed ((t (:foreground ,cinder-muted-red :bold t))))
  `(smerge-refined-changed ((t (:foreground ,cinder-muted-yellow :bold t))))
@@ -546,11 +546,11 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(org-formula ((t (:foreground ,cinder-muted-purple))))
  `(org-block ((t (:background ,cinder-muted-container :extend t))))
  `(org-block-begin-line ((t (:foreground ,cinder-muted-subtle
-                             :background ,cinder-muted-container
-                             :extend t))))
+                                          :background ,cinder-muted-container
+                                          :extend t))))
  `(org-block-end-line ((t (:inherit org-block-begin-line))))
  `(org-code ((t (:foreground ,cinder-muted-green
-                 :background ,cinder-muted-container :extend nil))))
+                             :background ,cinder-muted-container :extend nil))))
  `(org-inline-src-block ((t (:inherit org-block :extend nil))))
  `(org-verbatim ((t (:foreground ,cinder-muted-secondary))))
  `(org-quote ((t (:inherit org-block :slant italic :extend t))))
@@ -561,7 +561,7 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(org-ellipsis ((t (:foreground ,cinder-muted-muted))))
  `(org-column ((t (:background ,cinder-muted-surface))))
  `(org-column-title ((t (:foreground ,cinder-muted-orange :bold t
-                         :background ,cinder-muted-surface))))
+                                      :background ,cinder-muted-surface))))
  `(org-clock-overlay ((t (:background ,cinder-muted-visual))))
  `(org-agenda-clocking ((t (:background ,cinder-muted-visual))))
  `(org-agenda-structure ((t (:foreground ,cinder-muted-purple :bold t))))
@@ -588,11 +588,11 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(markdown-hr-face ((t (:foreground ,cinder-muted-muted))))
  `(markdown-blockquote-face ((t (:foreground ,cinder-muted-yellow :italic t))))
  `(markdown-code-face ((t (:background ,cinder-muted-container
-                           :foreground ,cinder-muted-bright
-                           :inherit fixed-pitch :extend nil))))
+                                       :foreground ,cinder-muted-bright
+                                       :inherit fixed-pitch :extend nil))))
  `(markdown-pre-face ((t (:inherit markdown-code-face :extend t))))
  `(markdown-inline-code-face ((t (:inherit markdown-code-face
-                                  :foreground ,cinder-muted-green :extend nil))))
+                                 :foreground ,cinder-muted-green :extend nil))))
  `(markdown-language-keyword-face ((t (:foreground ,cinder-muted-purple))))
  `(markdown-markup-face ((t (:foreground ,cinder-muted-muted))))
  `(markdown-list-face ((t (:foreground ,cinder-muted-green))))
@@ -608,7 +608,7 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(markdown-missing-link-face ((t (:foreground ,cinder-muted-red))))
  `(markdown-comment-face ((t (:inherit font-lock-comment-face))))
  `(markdown-strike-through-face ((t (:foreground ,cinder-muted-muted
-                                     :strike-through t))))
+                                                 :strike-through t))))
 
  ;; --- info, help, custom, compilation --------------------------------------------------
  `(info-title-1 ((t (:foreground ,cinder-muted-purple :bold t))))
@@ -625,11 +625,11 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(info-index-match ((t (:inherit isearch))))
  `(help-argument-name ((t (:foreground ,cinder-muted-cyan :italic t))))
  `(help-key-binding ((t (:background ,cinder-muted-container
-                         :foreground ,cinder-muted-bright :bold t))))
+                                      :foreground ,cinder-muted-bright :bold t))))
  `(widget-field ((t (:background ,cinder-muted-container
-                     :foreground ,cinder-muted-fg))))
- `(widget-single-line-field ((t (:background ,cinder-muted-container
                                  :foreground ,cinder-muted-fg))))
+ `(widget-single-line-field ((t (:background ,cinder-muted-container
+                                             :foreground ,cinder-muted-fg))))
  `(widget-button ((t (:foreground ,cinder-muted-orange :bold t))))
  `(custom-variable-tag ((t (:foreground ,cinder-muted-orange :bold t))))
  `(custom-face-tag ((t (:foreground ,cinder-muted-yellow))))
@@ -648,7 +648,7 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(compilation-mode-line-run ((t (:foreground ,cinder-muted-yellow :bold t))))
  `(whitespace-trailing ((t (:background ,cinder-muted-surface))))
  `(whitespace-line ((t (:background ,cinder-muted-surface
-                        :foreground ,cinder-muted-yellow))))
+                                    :foreground ,cinder-muted-yellow))))
  `(whitespace-space ((t (:foreground ,cinder-muted-visual))))
  `(whitespace-hspace ((t (:foreground ,cinder-muted-visual))))
  `(whitespace-tab ((t (:foreground ,cinder-muted-visual))))
@@ -658,102 +658,102 @@ Popup faces retain explicit backgrounds.  Reload the theme with
 
  ;; --- evil, search previews -----------------------------------------------------------
  `(evil-ex-substitute-matches ((t (:background ,cinder-muted-surface
-                                   :strike-through t))))
+                                               :strike-through t))))
  `(evil-ex-substitute-replacement ((t (:foreground ,cinder-muted-green))))
  `(evil-search-highlight-persist-highlight-face
    ((t (:background ,cinder-muted-visual))))
  `(evil-traces-default ((t (:background ,cinder-muted-surface
-                            :foreground ,cinder-muted-fg))))
+                                        :foreground ,cinder-muted-fg))))
  `(evil-traces-global-match ((t (:background ,cinder-muted-surface
-                                 :foreground ,cinder-muted-bright
-                                 :strike-through t))))
+                                             :foreground ,cinder-muted-bright
+                                             :strike-through t))))
  `(evil-traces-global-range ((t (:background ,cinder-muted-visual
-                                 :foreground ,cinder-muted-bright))))
+                                             :foreground ,cinder-muted-bright))))
  `(evil-traces-substitute-range ((t (:background ,cinder-muted-visual
-                                     :foreground
-                                     ,cinder-muted-bright))))
+                                                 :foreground
+                                                 ,cinder-muted-bright))))
  `(evil-traces-delete ((t (:background ,cinder-muted-red
-                           :foreground ,cinder-muted-bg :bold t))))
+                                       :foreground ,cinder-muted-bg :bold t))))
  `(evil-traces-change ((t (:background ,cinder-muted-orange
-                           :foreground ,cinder-muted-bg :bold t))))
+                                       :foreground ,cinder-muted-bg :bold t))))
  `(evil-traces-yank ((t (:background ,cinder-muted-green
-                         :foreground ,cinder-muted-bg :bold t))))
+                                     :foreground ,cinder-muted-bg :bold t))))
  `(evil-traces-copy-preview ((t (:background ,cinder-muted-surface
-                                 :foreground ,cinder-muted-bright))))
+                                             :foreground ,cinder-muted-bright))))
  `(evil-traces-copy-range ((t (:background ,cinder-muted-visual
-                               :foreground ,cinder-muted-bright))))
+                                           :foreground ,cinder-muted-bright))))
  `(evil-traces-move-preview ((t (:background ,cinder-muted-surface))))
  `(evil-traces-move-range ((t (:background ,cinder-muted-visual))))
  `(evil-traces-normal ((t (:foreground ,cinder-muted-fg))))
  `(evil-goggles-default-face ((t (:background ,cinder-muted-visual
-                                  :foreground ,cinder-muted-bright))))
+                                              :foreground ,cinder-muted-bright))))
  `(evil-goggles-delete-face ((t (:background ,cinder-muted-red
-                                 :foreground ,cinder-muted-bg))))
+                                             :foreground ,cinder-muted-bg))))
  `(evil-goggles-change-face ((t (:background ,cinder-muted-orange
-                                 :foreground ,cinder-muted-bg))))
+                                             :foreground ,cinder-muted-bg))))
  `(evil-goggles-yank-face ((t (:background ,cinder-muted-green
-                               :foreground ,cinder-muted-bg))))
+                                           :foreground ,cinder-muted-bg))))
  `(evil-goggles-paste-face ((t (:background ,cinder-muted-blue
-                                :foreground ,cinder-muted-bg))))
+                                            :foreground ,cinder-muted-bg))))
  `(evil-goggles-replace-with-register-face ((t (:background ,cinder-muted-purple
-                                                :foreground
-                                                ,cinder-muted-bg))))
+                                                           :foreground
+                                                           ,cinder-muted-bg))))
  `(evil-goggles-surround-face ((t (:background ,cinder-muted-cyan
-                                   :foreground ,cinder-muted-bg))))
+                                               :foreground ,cinder-muted-bg))))
  `(evil-snipe-first-match-face ((t (:background ,cinder-muted-orange
-                                    :foreground ,cinder-muted-bg
-                                    :bold t))))
+                                                :foreground ,cinder-muted-bg
+                                                :bold t))))
  `(evil-snipe-matches-face ((t (:background ,cinder-muted-surface
-                                :foreground ,cinder-muted-bright))))
+                                            :foreground ,cinder-muted-bright))))
  `(anzu-mode-line ((t (:foreground ,cinder-muted-orange :bold t))))
  `(anzu-mode-line-no-match ((t (:foreground ,cinder-muted-red :bold t))))
  `(anzu-replace-highlight ((t (:background ,cinder-muted-surface
-                               :foreground ,cinder-muted-bright))))
+                                           :foreground ,cinder-muted-bright))))
  `(anzu-replace-to ((t (:foreground ,cinder-muted-green :bold t))))
  `(anzu-match-1 ((t (:foreground ,cinder-muted-orange))))
  `(anzu-match-2 ((t (:foreground ,cinder-muted-yellow))))
  `(anzu-match-3 ((t (:foreground ,cinder-muted-green))))
  `(iedit-occurrence ((t (:background ,cinder-muted-surface
-                         :foreground ,cinder-muted-bright :bold t))))
+                                     :foreground ,cinder-muted-bright :bold t))))
  `(iedit-read-only-occurrence ((t (:background ,cinder-muted-visual
-                                   :foreground ,cinder-muted-muted
-                                   :italic t))))
+                                               :foreground ,cinder-muted-muted
+                                               :italic t))))
 
  ;; --- navigation -------------------------------------------------------------------------
  `(avy-lead-face ((t (:background ,cinder-muted-orange
-                      :foreground ,cinder-muted-bg :bold t))))
+                                  :foreground ,cinder-muted-bg :bold t))))
  `(avy-lead-face-0 ((t (:background ,cinder-muted-green
-                        :foreground ,cinder-muted-bg :bold t))))
+                                    :foreground ,cinder-muted-bg :bold t))))
  `(avy-lead-face-1 ((t (:background ,cinder-muted-yellow
-                        :foreground ,cinder-muted-bg :bold t))))
+                                    :foreground ,cinder-muted-bg :bold t))))
  `(avy-lead-face-2 ((t (:background ,cinder-muted-blue
-                        :foreground ,cinder-muted-bg :bold t))))
+                                    :foreground ,cinder-muted-bg :bold t))))
  `(avy-background-face ((t (:foreground ,cinder-muted-muted))))
  `(avy-goto-char-timer-face ((t (:background ,cinder-muted-surface
-                                 :foreground
-                                 ,cinder-muted-bright :bold t))))
+                                             :foreground
+                                             ,cinder-muted-bright :bold t))))
  `(aw-leading-char-face ((t (:foreground ,cinder-muted-orange :bold t))))
  `(aw-background-face ((t (:foreground ,cinder-muted-muted))))
  `(aw-mode-line-face ((t (:foreground ,cinder-muted-orange :bold t))))
  `(aw-minibuffer-leading-char-face ((t (:foreground ,cinder-muted-orange
-                                        :bold t))))
+                                                    :bold t))))
 
  ;; --- misc ui ------------------------------------------------------------------------------
  `(hl-todo ((t (:foreground ,cinder-muted-orange :bold t))))
  `(link ((t (:foreground ,cinder-muted-blue :underline t))))
  `(link-visited ((t (:foreground ,cinder-muted-purple :underline t))))
  `(tooltip ((t (:background ,cinder-muted-container
-                :foreground ,cinder-muted-fg))))
+                            :foreground ,cinder-muted-fg))))
  `(popup-face ((t (:background ,cinder-muted-container
-                   :foreground ,cinder-muted-fg))))
+                               :foreground ,cinder-muted-fg))))
  `(popup-tip-face ((t (:background ,cinder-muted-surface
-                       :foreground ,cinder-muted-orange))))
+                                   :foreground ,cinder-muted-orange))))
  `(popup-menu-selection-face ((t (:background ,cinder-muted-orange
-                                  :foreground ,cinder-muted-bg))))
+                                              :foreground ,cinder-muted-bg))))
  `(popup-menu-summary-face ((t (:inherit shadow))))
  `(child-frame-border ((t (:background ,cinder-muted-muted))))
  `(nav-flash-face ((t (:background ,cinder-muted-visual
-                       :foreground ,cinder-muted-orange))))
+                                   :foreground ,cinder-muted-orange))))
  `(which-key-key-face ((t (:foreground ,cinder-muted-orange :bold t))))
  `(which-key-command-description-face ((t (:foreground ,cinder-muted-fg))))
  `(which-key-group-description-face ((t (:foreground ,cinder-muted-subtle))))
@@ -796,26 +796,26 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(highlight-quoted-quote ((t (:foreground ,cinder-muted-purple))))
  `(highlight-quoted-symbol ((t (:foreground ,cinder-muted-cyan))))
  `(eros-result-overlay-face ((t (:background ,cinder-muted-container
-                                 :foreground ,cinder-muted-green))))
+                                             :foreground ,cinder-muted-green))))
  `(yas-field-highlight-face ((t (:background ,cinder-muted-visual))))
  `(dape-breakpoint-face ((t (:background ,cinder-muted-red
-                             :foreground ,cinder-muted-bright))))
+                                         :foreground ,cinder-muted-bright))))
  `(dape-breakpoint-until-face ((t (:background ,cinder-muted-purple
-                                   :foreground
-                                   ,cinder-muted-bright))))
+                                               :foreground
+                                               ,cinder-muted-bright))))
  `(dape-source-line-face ((t (:background ,cinder-muted-visual
-                              :foreground ,cinder-muted-bright))))
+                                          :foreground ,cinder-muted-bright))))
  `(dape-expression-face ((t (:foreground ,cinder-muted-yellow))))
  `(dape-inlay-hint-face ((t (:foreground ,cinder-muted-subtle
-                             :background ,cinder-muted-surface
-                             :italic t))))
+                                         :background ,cinder-muted-surface
+                                         :italic t))))
  `(dape-repl-error-face ((t (:foreground ,cinder-muted-red))))
  `(dape-log-face ((t (:inherit shadow))))
  `(dape-header-line-active-face ((t (:background ,cinder-muted-orange
-                                     :foreground ,cinder-muted-bg))))
+                                                 :foreground ,cinder-muted-bg))))
  `(dape-header-line-inactive-face ((t (:background ,cinder-muted-container
-                                       :foreground
-                                       ,cinder-muted-muted))))
+                                                   :foreground
+                                                   ,cinder-muted-muted))))
  `(dape-hits-face ((t (:foreground ,cinder-muted-green))))
 
  ;; --- nerd-icons -------------------------------------------------------------------------------
@@ -856,19 +856,19 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(lsp-face-highlight-read ((t (:background ,cinder-muted-visual))))
  `(lsp-face-highlight-textual ((t (:background ,cinder-muted-surface))))
  `(lsp-face-highlight-write ((t (:background ,cinder-muted-visual
-                                 :box (:color ,cinder-muted-orange)))))
+                                             :box (:color ,cinder-muted-orange)))))
  `(lsp-face-rename ((t (:background ,cinder-muted-surface))))
  `(lsp-ui-doc-background ((t (:background ,cinder-muted-container))))
  `(lsp-inlay-hint-face ((t (:foreground ,cinder-muted-subtle
-                            :background ,cinder-muted-surface
-                            :italic t))))
+                                        :background ,cinder-muted-surface
+                                        :italic t))))
  `(lsp-inlay-hint-parameter-face ((t (:foreground ,cinder-muted-orange
-                                      :background
-                                      ,cinder-muted-surface
-                                      :italic t))))
+                                                 :background
+                                                 ,cinder-muted-surface
+                                                 :italic t))))
  `(lsp-inlay-hint-type-face ((t (:foreground ,cinder-muted-yellow
-                                 :background ,cinder-muted-surface
-                                 :italic t))))
+                                             :background ,cinder-muted-surface
+                                             :italic t))))
  `(lsp-lens-face ((t (:inherit shadow))))
  `(lsp-details-face ((t (:inherit shadow :italic t))))
  `(lsp-modeline-code-actions-face ((t (:foreground ,cinder-muted-yellow))))
@@ -876,27 +876,27 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(lsp-signature-highlight-function-argument ((t (:foreground
                                                   ,cinder-muted-orange :bold t))))
  `(lsp-signature-posframe ((t (:background ,cinder-muted-container
-                               :foreground ,cinder-muted-fg))))
+                                           :foreground ,cinder-muted-fg))))
  `(lsp-headerline-breadcrumb-path-face ((t (:foreground ,cinder-muted-subtle))))
  `(lsp-headerline-breadcrumb-symbols-face ((t (:foreground ,cinder-muted-orange))))
  `(lsp-headerline-breadcrumb-separator-face ((t (:foreground ,cinder-muted-muted))))
  `(lsp-headerline-breadcrumb-project-prefix-face ((t (:foreground
-                                                      ,cinder-muted-yellow))))
+                                                     ,cinder-muted-yellow))))
  `(lsp-headerline-breadcrumb-path-error-face ((t (:foreground ,cinder-muted-red))))
  `(lsp-headerline-breadcrumb-path-warning-face ((t (:foreground
-                                                    ,cinder-muted-yellow))))
+                                                   ,cinder-muted-yellow))))
  `(lsp-headerline-breadcrumb-path-info-face ((t (:foreground ,cinder-muted-blue))))
  `(lsp-headerline-breadcrumb-path-hint-face ((t (:foreground ,cinder-muted-cyan))))
  `(lsp-headerline-breadcrumb-symbols-error-face ((t (:foreground
                                                      ,cinder-muted-red))))
  `(lsp-headerline-breadcrumb-symbols-warning-face ((t (:foreground
-                                                       ,cinder-muted-yellow))))
+                                                      ,cinder-muted-yellow))))
  `(lsp-headerline-breadcrumb-symbols-info-face ((t (:foreground
-                                                    ,cinder-muted-blue))))
+                                                   ,cinder-muted-blue))))
  `(lsp-headerline-breadcrumb-symbols-hint-face ((t (:foreground
-                                                    ,cinder-muted-cyan))))
+                                                   ,cinder-muted-cyan))))
  `(lsp-headerline-breadcrumb-deprecated-face ((t (:foreground ,cinder-muted-muted
-                                                  :strike-through t))))
+                                                              :strike-through t))))
  `(lsp-face-semhl-keyword ((t (:foreground ,cinder-muted-orange))))
  `(lsp-face-semhl-string ((t (:foreground ,cinder-muted-green))))
  `(lsp-face-semhl-number ((t (:foreground ,cinder-muted-purple))))
@@ -921,28 +921,28 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(lsp-face-semhl-operator ((t (:foreground ,cinder-muted-secondary))))
  `(lsp-face-semhl-regexp ((t (:foreground ,cinder-muted-green))))
  `(lsp-face-semhl-default-library ((t (:foreground ,cinder-muted-purple
-                                       :italic t))))
+                                                  :italic t))))
  `(lsp-face-semhl-deprecated ((t (:strike-through t))))
 
  ;; --- terminals (ANSI palette from terminal_colors upstream) -------------------------------
  `(ansi-color-black ((t (:foreground ,cinder-muted-bg
-                         :background ,cinder-muted-bg))))
+                        :background ,cinder-muted-bg))))
  `(ansi-color-red ((t (:foreground ,cinder-muted-red
-                       :background ,cinder-muted-red))))
+                      :background ,cinder-muted-red))))
  `(ansi-color-green ((t (:foreground ,cinder-muted-green
-                         :background ,cinder-muted-green))))
+                        :background ,cinder-muted-green))))
  `(ansi-color-yellow ((t (:foreground ,cinder-muted-yellow
-                          :background ,cinder-muted-yellow))))
+                         :background ,cinder-muted-yellow))))
  `(ansi-color-blue ((t (:foreground ,cinder-muted-blue
-                        :background ,cinder-muted-blue))))
+                       :background ,cinder-muted-blue))))
  `(ansi-color-magenta ((t (:foreground ,cinder-muted-purple
-                           :background ,cinder-muted-purple))))
+                          :background ,cinder-muted-purple))))
  `(ansi-color-cyan ((t (:foreground ,cinder-muted-cyan
-                        :background ,cinder-muted-cyan))))
+                       :background ,cinder-muted-cyan))))
  `(ansi-color-white ((t (:foreground ,cinder-muted-secondary
-                         :background ,cinder-muted-secondary))))
+                        :background ,cinder-muted-secondary))))
  `(ansi-color-bright-black ((t (:foreground ,cinder-muted-muted
-                                :background ,cinder-muted-muted))))
+                               :background ,cinder-muted-muted))))
  `(ansi-color-bright-red ((t (:inherit ansi-color-red))))
  `(ansi-color-bright-green ((t (:inherit ansi-color-green))))
  `(ansi-color-bright-yellow ((t (:inherit ansi-color-yellow))))
@@ -950,57 +950,57 @@ Popup faces retain explicit backgrounds.  Reload the theme with
  `(ansi-color-bright-magenta ((t (:inherit ansi-color-magenta))))
  `(ansi-color-bright-cyan ((t (:inherit ansi-color-cyan))))
  `(ansi-color-bright-white ((t (:foreground ,cinder-muted-bright
-                                :background ,cinder-muted-bright))))
+                               :background ,cinder-muted-bright))))
  `(term-color-black ((t (:foreground ,cinder-muted-bg
-                         :background ,cinder-muted-bg))))
+                                     :background ,cinder-muted-bg))))
  `(term-color-red ((t (:foreground ,cinder-muted-red
-                       :background ,cinder-muted-red))))
+                                   :background ,cinder-muted-red))))
  `(term-color-green ((t (:foreground ,cinder-muted-green
-                         :background ,cinder-muted-green))))
+                                     :background ,cinder-muted-green))))
  `(term-color-yellow ((t (:foreground ,cinder-muted-yellow
-                          :background ,cinder-muted-yellow))))
+                                      :background ,cinder-muted-yellow))))
  `(term-color-blue ((t (:foreground ,cinder-muted-blue
-                        :background ,cinder-muted-blue))))
+                                    :background ,cinder-muted-blue))))
  `(term-color-magenta ((t (:foreground ,cinder-muted-purple
-                           :background ,cinder-muted-purple))))
+                                       :background ,cinder-muted-purple))))
  `(term-color-cyan ((t (:foreground ,cinder-muted-cyan
-                        :background ,cinder-muted-cyan))))
+                                    :background ,cinder-muted-cyan))))
  `(term-color-white ((t (:foreground ,cinder-muted-secondary
-                         :background ,cinder-muted-secondary))))
+                                     :background ,cinder-muted-secondary))))
  `(vterm-color-black ((t (:foreground ,cinder-muted-bg
-                          :background ,cinder-muted-bg))))
+                                      :background ,cinder-muted-bg))))
  `(vterm-color-red ((t (:foreground ,cinder-muted-red
-                        :background ,cinder-muted-red))))
+                                    :background ,cinder-muted-red))))
  `(vterm-color-green ((t (:foreground ,cinder-muted-green
-                          :background ,cinder-muted-green))))
+                                      :background ,cinder-muted-green))))
  `(vterm-color-yellow ((t (:foreground ,cinder-muted-yellow
-                           :background ,cinder-muted-yellow))))
+                                       :background ,cinder-muted-yellow))))
  `(vterm-color-blue ((t (:foreground ,cinder-muted-blue
-                         :background ,cinder-muted-blue))))
+                                     :background ,cinder-muted-blue))))
  `(vterm-color-magenta ((t (:foreground ,cinder-muted-purple
-                            :background ,cinder-muted-purple))))
+                                        :background ,cinder-muted-purple))))
  `(vterm-color-cyan ((t (:foreground ,cinder-muted-cyan
-                         :background ,cinder-muted-cyan))))
+                                     :background ,cinder-muted-cyan))))
  `(vterm-color-white ((t (:foreground ,cinder-muted-secondary
-                          :background ,cinder-muted-secondary))))
+                                      :background ,cinder-muted-secondary))))
  `(vterm-color-bright-black ((t (:foreground ,cinder-muted-muted
-                                 :background ,cinder-muted-muted))))
+                                             :background ,cinder-muted-muted))))
  `(vterm-color-bright-red ((t (:foreground ,cinder-muted-red
-                               :background ,cinder-muted-red))))
+                                           :background ,cinder-muted-red))))
  `(vterm-color-bright-green ((t (:foreground ,cinder-muted-green
-                                 :background ,cinder-muted-green))))
+                                             :background ,cinder-muted-green))))
  `(vterm-color-bright-yellow ((t (:foreground ,cinder-muted-yellow
-                                  :background
-                                  ,cinder-muted-yellow))))
+                                              :background
+                                              ,cinder-muted-yellow))))
  `(vterm-color-bright-blue ((t (:foreground ,cinder-muted-blue
-                                :background ,cinder-muted-blue))))
+                                            :background ,cinder-muted-blue))))
  `(vterm-color-bright-magenta ((t (:foreground ,cinder-muted-purple
-                                   :background
-                                   ,cinder-muted-purple))))
+                                               :background
+                                               ,cinder-muted-purple))))
  `(vterm-color-bright-cyan ((t (:foreground ,cinder-muted-cyan
-                                :background ,cinder-muted-cyan))))
+                                            :background ,cinder-muted-cyan))))
  `(vterm-color-bright-white ((t (:foreground ,cinder-muted-bright
-                                 :background ,cinder-muted-bright)))))
+                                             :background ,cinder-muted-bright)))))
 
 ;;;###autoload
 (and load-file-name

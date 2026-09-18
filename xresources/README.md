@@ -1,19 +1,11 @@
 # Cinder Muted for Xresources
 
-Terminal palette in Xresources form. The color order matches cinder-grove.nvim's terminal colors.
-
 ## Install
 
-Add the colors to `~/.Xresources` with an include:
+Download `cinder-muted.xrdb` and include it from `~/.Xresources`:
 
 ```
-#include "/path/to/cinder-muted/xresources/cinder-muted.xrdb"
+#include "/home/you/.config/x11/cinder-muted.xrdb"
 ```
 
-Or just copy and paste them int `~/.Xresources` directly.
-
-Then reload:
-
-```sh
-xrdb -merge ~/.Xresources
-```
+Then reload with `xrdb -merge ~/.Xresources`.

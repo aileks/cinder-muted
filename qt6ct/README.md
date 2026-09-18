@@ -2,15 +2,9 @@
 
 ## Install
 
-Copy the palette into a qt6ct color directory:
+Download `cinder-muted.conf` into a qt6ct color directory such as `~/.config/qt6ct/colors/`, then point `~/.config/qt6ct/qt6ct.conf` (or the GUI) at it:
 
-```sh
-sudo cp cinder-muted.conf /usr/local/share/qt6ct/colors/
-```
-
-Then set it in `~/.config/qt6ct/qt6ct.conf` (or use the GUI):
-
-```
+```ini
 [Appearance]
-color_scheme_path=/usr/local/share/qt6ct/colors/cinder-muted.conf
+color_scheme_path=~/.config/qt6ct/colors/cinder-muted.conf
 ```

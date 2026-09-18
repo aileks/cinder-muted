@@ -1,11 +1,5 @@
 # Cinder Muted for cava
 
-Full drop-in cava config with the muted gradient.
-
 ## Install
 
-```sh
-cp config ~/.config/cava/config
-```
-
-Restart cava.
+Copy the `[color]` values from `config` into the `[color]` section of `~/.config/cava/config`. Restart cava.

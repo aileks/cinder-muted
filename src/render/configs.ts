@@ -12,6 +12,37 @@ export function renderQt6ct(template: string, tones: Map<string, string>): strin
   return `# ${GENERATED_NOTE}\n${applyTones(template, tones)}`
 }
 
+export function renderDunst(template: string, tones: Map<string, string>): string {
+  return `# ${GENERATED_NOTE}\n${applyTones(template, tones)}`
+}
+
+export function renderRofi(template: string, tones: Map<string, string>): string {
+  return `/* ${GENERATED_NOTE} */\n${applyTones(template, tones)}`
+}
+
+
+
+export function renderStHeader(template: string, tones: Map<string, string>): string {
+  return `/* ${GENERATED_NOTE} */\n${applyTones(template, tones)}`
+}
+
+// i3lock colors have no leading #, so do the color swap by hand here.
+export function renderI3lock(template: string, tones: Map<string, string>): string {
+  const colored = template.replace(
+    /([0-9a-f]{6})(ff)?(?![0-9a-f])/g,
+    (match, digits: string, alpha?: string) => {
+      const tone = tones.get(`#${digits}`)
+      if (tone === undefined) throw new Error(`i3lock color ${match} is not in the tone map`)
+      return `${tone.slice(1)}${alpha ?? ''}`
+    },
+  )
+  return colored.replace('#!/bin/sh\n', `#!/bin/sh\n# ${GENERATED_NOTE}\n`)
+}
+
+export function renderFzf(template: string, tones: Map<string, string>): string {
+  return `# ${GENERATED_NOTE}\n${applyTones(template, tones)}`
+}
+
 export function renderBatTheme(template: string, tones: Map<string, string>): string {
   // Angle brackets must stay escaped inside the plist strings.
   const renamed = rename(template, [

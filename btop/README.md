@@ -2,12 +2,8 @@
 
 ## Install
 
-```sh
-cp cinder-muted.theme ~/.config/btop/themes/
-```
+Download `cinder-muted.theme` to `~/.config/btop/themes/`, then set the theme in `~/.config/btop/btop.conf`:
 
-Set the theme in `~/.config/btop/btop.conf`:
-
-```
+```ini
 color_theme = "cinder-muted"
 ```
