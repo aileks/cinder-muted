@@ -1,0 +1,22 @@
+# Place these in your shell's rc file
+
+# #d85e8389adbc8a90;31313131
+#   d8 5e 83 89 ad bc 8a 90  <- xterm-256 color for contexts 1-8, in order
+#   3  1  3  1  3  1  3  1   <- classic 8-color ANSI digit for contexts 1-8, in order
+export NNN_COLORS='#d85e8389adbc8a90;31313131'
+
+#   mapping              hex   palette swatch
+#   -------------------  ----  --------------------------
+#   block device         90    #B5A196 
+#   char device          b5    #C5AFA4
+#   directory            ad    #D98C63
+#   executable           d8    #F1A278
+#   regular file         00    terminal default fg
+#   hard link            8a    #A39086
+#   symbolic link        bc    #E9D1C5
+#   missing/detail text  ef    #5F5049
+#   orphaned symlink     83    #A45751
+#   fifo                 89    #C2764E
+#   socket               5e    #944D24
+#   unknown/0B file      83    #A45751
+export NNN_FCOLORS='90b5add8008abcef83895e83'
