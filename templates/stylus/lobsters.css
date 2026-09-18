@@ -1,0 +1,54 @@
+:root {
+  --color-bg: #131210;
+  --color-fg: #BBB3A9;
+  --color-fg-shape: #3E3A34;
+  --color-tag-bg: rgb(217 164 65 / 20%);
+  --color-tag-border: rgb(217 164 65 / 20%);
+  --color-lobsters-tag-special-bg: rgb(179 74 69 / 30%);
+  --color-lobsters-tag-special-border: rgb(179 74 69 / 30%);
+  --color-tag-media-bg: rgb(103 133 161 / 20%);
+  --color-tag-media-border: rgb(103 133 161 / 30%);
+  --color-tag-meta-bg: #23201C;
+  --color-tag-meta-border: #3E3A34;
+  --color-bg-target: rgb(225 122 63 / 20%);
+  --color-fg-affirmative: #879B5C;
+  --color-fg-accent: #E17A3F;
+  --color-fg-author: #6785A1;
+  --color-fg-contrast-7-5: #6785A1;
+  --color-fg-link: #6785A1;
+  --color-fg-link-visited: #9A788F;
+  --color-fg-contrast-4-5: #9A938A;
+  --color-fg-contrast-5: #ACA49B;
+  --color-fg-contrast-6: #ACA49B;
+  --color-fg-contrast-10: #BBB3A9;
+  --color-fg-contrast-13: #BBB3A9;
+  --color-box-bg: #1B1916;
+  --color-button-bg: #1B1916;
+  --color-button-bg-shaded: #23201C;
+  --color-box-border: #23201C;
+  --color-box-border-focus: #E17A3F;
+  --color-box-bg-shaded: #1B1916;
+  --color-mobile-story-liner-bg: #131210;
+  --color-mobile-story-comments-bubble-fill: #58534C;
+  --color-mobile-story-comments-bubble-fill-zero: #23201C;
+  --color-table-header-bg: #23201C;
+  --color-table-header-border: #58534C;
+  --color-table-row-bg-even: #1B1916;
+  --color-table-row-bg-odd: #131210;
+  --color-table-row-border: #131210;
+  --color-flash-bg-success: rgb(135 155 92 / 30%);
+  --color-fg-negative: #B34A45;
+}
+
+hr {
+  color: #3E3A34;
+}
+
+#logo {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23E17A3F%22%20d%3D%22M16%2016H0V0h16z%22%2F%3E%3Cpath%20fill%3D%22%23131210%22%20d%3D%22M3.5%2013.45v-.63c0-.11%200-.1.1-.11.23-.02.46-.03.69-.07.46-.08.67-.31.74-.78.02-.14.03-.29.03-.43V4.69c0-.18-.02-.36-.04-.53-.03-.31-.23-.5-.52-.61-.27-.1-.55-.11-.83-.13h-.15v-.65c0-.07.02-.09.09-.09h5.24c.07%200%20.1.01.1.09-.01.19%200%20.37%200%20.56v.08c-.14.01-.28%200-.41.02-.2.03-.4.06-.59.11-.35.11-.53.35-.57.68q-.03.225-.03.45v6.39c0%20.27.03.54.06.8.03.29.22.48.49.58.23.09.48.11.72.12.63.02%201.25.01%201.86-.15.88-.22%201.47-.77%201.76-1.64.09-.28.13-.57.2-.86.01-.02.03-.06.05-.06h.66c-.02%201.2.02%202.4%200%203.6z%22%2F%3E%3C%2Fsvg%3E");
+  background-color: transparent !important;
+}
+
+#logo::after {
+  background: none;
+}

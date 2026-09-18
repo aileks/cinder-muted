@@ -2,10 +2,18 @@
 // colors throw so a grove update with new colors fails the build.
 
 const HEX_RE = /#([0-9A-Fa-f]{8}|[0-9A-Fa-f]{6})(?![0-9A-Fa-f])/g
+const ESCAPED_HEX_RE = /%23([0-9A-Fa-f]{6})(?![0-9A-Fa-f])/g
 const RGB_RE = /rgb\((\d+) (\d+) (\d+)( ?\/ ?[0-9.]+%?)?\)/g
 
-export function applyTones(text: string, tones: Map<string, string>): string {
+// `preserve` lists site-native colors (selector attribute values) that must
+// stay verbatim for the site's markup to match.
+export function applyTones(
+  text: string,
+  tones: Map<string, string>,
+  preserve: ReadonlySet<string> = new Set(),
+): string {
   const hexes = text.replace(HEX_RE, (match, digits: string) => {
+    if (preserve.has(digits.toLowerCase())) return match
     let tone = tones.get(`#${digits.toLowerCase()}`)
     if (tone !== undefined) return tone
 
@@ -19,7 +27,15 @@ export function applyTones(text: string, tones: Map<string, string>): string {
     throw new Error(`grove color ${match} is not in the tone map`)
   })
 
-  return hexes.replace(RGB_RE, (match, r: string, g: string, b: string, alpha?: string) => {
+  const escaped = hexes.replace(ESCAPED_HEX_RE, (match, digits: string) => {
+    if (preserve.has(digits.toLowerCase())) return match
+    const tone = tones.get(`#${digits.toLowerCase()}`)
+    if (tone === undefined) throw new Error(`grove color ${match} is not in the tone map`)
+    return `%23${tone.slice(1)}`
+  })
+
+  return escaped.replace(RGB_RE, (match, r: string, g: string, b: string, alpha?: string) => {
+    if (preserve.has(`${r},${g},${b}`)) return match
     const tone = tones.get(`${r},${g},${b}`)
     if (tone !== undefined) {
       const value = tone.slice(1)

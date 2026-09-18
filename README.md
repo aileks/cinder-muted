@@ -16,7 +16,7 @@ Each port has its own README with install instructions.
 | [Emacs](emacs/README.md) | `emacs/cinder-muted-theme.el` | package recipe or manual |
 | [Xresources](xresources/README.md) | `xresources/cinder-muted.xrdb` | include or paste into `~/.Xresources` |
 | [GTK 3/4](gtk/README.md) | `gtk/Cinder-Muted-Dark/` | `gtk/install.sh` |
-| [Stylus](stylus/README.md) | `stylus/cinder-muted.user.css` | import into the Stylus extension |
+| [Stylus](stylus/README.md) | `stylus/<site>/cinder-muted.user.css` | per-site styles plus a global fallback |
 | [cava](cava/README.md) | `cava/config` | copy to `~/.config/cava/config` |
 | [btop](btop/README.md) | `btop/cinder-muted.theme` | copy and set `color_theme` |
 | [qt6ct](qt6ct/README.md) | `qt6ct/cinder-muted.conf` | copy into a qt6ct color dir |

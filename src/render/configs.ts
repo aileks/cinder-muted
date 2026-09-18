@@ -26,13 +26,6 @@ export function renderBatTheme(template: string, tones: Map<string, string>): st
   return applyTones(renamed, tones)
 }
 
-export function renderYaziThemeToml(template: string, tones: Map<string, string>): string {
-  return `# ${GENERATED_NOTE}\n${applyTones(
-    rename(template, [['cinder-grove.tmTheme', 'cinder-muted.tmTheme']]),
-    tones,
-  )}`
-}
-
 export function renderYaziTheme(template: string, tones: Map<string, string>): string {
   return applyTones(rename(template, [[/Cinder Grove/g, 'Cinder Muted']]), tones)
 }
