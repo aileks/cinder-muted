@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>author</key>
-	<string>Kieran Pedrick <kieran@aileks.dev></string>
+	<string>Kieran Pedrick &lt;kieran@aileks.dev&gt;</string>
 	<key>colorSpaceName</key>
 	<string>sRGB</string>
 	<key>name</key>

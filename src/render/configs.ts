@@ -15,8 +15,9 @@ export function renderQt6ct(template: string, tones: Map<string, string>): strin
 }
 
 export function renderBatTheme(template: string, tones: Map<string, string>): string {
+  // Angle brackets must stay escaped inside the plist strings.
   const renamed = rename(template, [
-    ['Caspian Harper', 'Kieran Pedrick <kieran@aileks.dev>'],
+    ['Caspian Harper', 'Kieran Pedrick &lt;kieran@aileks.dev&gt;'],
     [/Cinder Grove/g, 'Cinder Muted'],
     ['theme.dark.cinder-grove', 'theme.dark.cinder-muted'],
     // Distinct uuid so bat's theme cache keeps grove and muted apart.
