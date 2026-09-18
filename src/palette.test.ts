@@ -141,7 +141,7 @@ describe('terminal files', () => {
       .sort((a, b) => Number(a[1]) - Number(b[1]))
       .map((match) => match[2]!)
     const stColors = [
-      ...readFileSync('st/config.def.h', 'utf8').matchAll(/^\t"(#[0-9A-F]{6})",$/gm),
+      ...readFileSync('st/colors.h', 'utf8').matchAll(/^\t"(#[0-9A-F]{6})",$/gm),
     ].map((match) => match[1]!)
     expect(xrdbColors).toEqual(expected)
     expect(stColors).toEqual(expected)
