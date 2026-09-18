@@ -4,7 +4,7 @@ follow = none
 width = 380
 height = (0, 120)
 origin = top-right
-offset = (0, 25)
+offset = (5, 25)
 frame_width = 2
 frame_color = "#58534C"
 separator_color = frame
@@ -23,17 +23,20 @@ timeout = 5
 [urgency_low]
 background = "#131210"
 foreground = "#BBB3A9"
-frame_color = "#58534C"
+frame_color = "#879B5C"
+highlight = "#879B5C"
 timeout = 4
 
 [urgency_normal]
 background = "#131210"
 foreground = "#BBB3A9"
-frame_color = "#9A938A"
+frame_color = "#E17A3F"
+highlight = "#E17A3F"
 timeout = 5
 
 [urgency_critical]
 background = "#131210"
 foreground = "#DDD5CA"
 frame_color = "#B34A45"
+highlight = "#B34A45"
 timeout = 0
