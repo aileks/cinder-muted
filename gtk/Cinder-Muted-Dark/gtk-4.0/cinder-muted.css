@@ -1,0 +1,170 @@
+@define-color cinder_background #16110f;
+@define-color cinder_container #1f1714;
+@define-color cinder_surface #281e19;
+@define-color cinder_overlay #624f46;
+@define-color cinder_text_muted #624f46;
+@define-color cinder_text_subtle #a78e82;
+@define-color cinder_text_secondary #b99f93;
+@define-color cinder_text #c9aea0;
+@define-color cinder_text_bright #eccfc1;
+@define-color cinder_success #df8452;
+@define-color cinder_error #a45751;
+@define-color cinder_warning #ffa474;
+@define-color cinder_info #ac5621;
+@define-color cinder_purple #bd6532;
+@define-color cinder_cyan #ce7442;
+
+@define-color destructive_bg_color @cinder_error;
+@define-color destructive_fg_color white;
+@define-color destructive_color color-mix(in srgb, @cinder_error 60%, white);
+@define-color success_bg_color @cinder_success;
+@define-color success_fg_color @cinder_background;
+@define-color success_color @cinder_success;
+@define-color warning_bg_color @cinder_warning;
+@define-color warning_fg_color @cinder_background;
+@define-color warning_color @cinder_warning;
+@define-color error_bg_color @cinder_error;
+@define-color error_fg_color white;
+@define-color error_color color-mix(in srgb, @cinder_error 60%, white);
+
+@define-color window_bg_color @cinder_background;
+@define-color window_fg_color @cinder_text;
+@define-color view_bg_color @cinder_background;
+@define-color view_fg_color @cinder_text;
+@define-color headerbar_bg_color @cinder_container;
+@define-color headerbar_fg_color @cinder_text_bright;
+@define-color headerbar_border_color @cinder_overlay;
+@define-color headerbar_backdrop_color @cinder_background;
+@define-color headerbar_shade_color alpha(@cinder_background, 0.75);
+@define-color headerbar_darker_shade_color alpha(black, 0.9);
+@define-color sidebar_bg_color @cinder_container;
+@define-color sidebar_fg_color @cinder_text;
+@define-color sidebar_backdrop_color @cinder_background;
+@define-color sidebar_shade_color alpha(@cinder_background, 0.72);
+@define-color sidebar_border_color alpha(@cinder_overlay, 0.65);
+@define-color secondary_sidebar_bg_color @cinder_background;
+@define-color secondary_sidebar_fg_color @cinder_text;
+@define-color secondary_sidebar_backdrop_color @cinder_background;
+@define-color secondary_sidebar_shade_color alpha(@cinder_background, 0.65);
+@define-color secondary_sidebar_border_color alpha(@cinder_overlay, 0.55);
+@define-color card_bg_color @cinder_surface;
+@define-color card_fg_color @cinder_text;
+@define-color card_shade_color alpha(@cinder_overlay, 0.55);
+@define-color dialog_bg_color @cinder_container;
+@define-color dialog_fg_color @cinder_text;
+@define-color popover_bg_color @cinder_container;
+@define-color popover_fg_color @cinder_text;
+@define-color popover_shade_color alpha(@cinder_background, 0.8);
+@define-color thumbnail_bg_color @cinder_surface;
+@define-color thumbnail_fg_color @cinder_text;
+@define-color shade_color alpha(@cinder_background, 0.65);
+@define-color scrollbar_outline_color alpha(black, 0.9);
+
+:root {
+  --cinder-background: #16110f;
+  --cinder-container: #1f1714;
+  --cinder-surface: #281e19;
+  --cinder-overlay: #624f46;
+  --cinder-text: #c9aea0;
+  --cinder-text-bright: #eccfc1;
+  --accent-blue: #ac5621;
+  --accent-teal: #ce7442;
+  --accent-green: #df8452;
+  --accent-yellow: #ffa474;
+  --accent-orange: #f09361;
+  --accent-red: #a45751;
+  --accent-pink: #bd6532;
+  --accent-purple: #bd6532;
+  --accent-slate: #a78e82;
+
+  --destructive-bg-color: #a45751;
+  --destructive-fg-color: white;
+  --destructive-color: color-mix(in srgb, #a45751 60%, white);
+  --success-bg-color: #df8452;
+  --success-fg-color: #16110f;
+  --success-color: #df8452;
+  --warning-bg-color: #ffa474;
+  --warning-fg-color: #16110f;
+  --warning-color: #ffa474;
+  --error-bg-color: #a45751;
+  --error-fg-color: white;
+  --error-color: color-mix(in srgb, #a45751 60%, white);
+
+  --window-bg-color: #16110f;
+  --window-fg-color: #c9aea0;
+  --view-bg-color: #16110f;
+  --view-fg-color: #c9aea0;
+  --headerbar-bg-color: #1f1714;
+  --headerbar-fg-color: #eccfc1;
+  --headerbar-border-color: #624f46;
+  --headerbar-backdrop-color: #16110f;
+  --headerbar-shade-color: rgb(22 17 15 / 75%);
+  --headerbar-darker-shade-color: rgb(0 0 0 / 90%);
+  --sidebar-bg-color: #1f1714;
+  --sidebar-fg-color: #c9aea0;
+  --sidebar-backdrop-color: #16110f;
+  --sidebar-border-color: rgb(98 79 70 / 65%);
+  --sidebar-shade-color: rgb(22 17 15 / 72%);
+  --secondary-sidebar-bg-color: #16110f;
+  --secondary-sidebar-fg-color: #c9aea0;
+  --secondary-sidebar-backdrop-color: #16110f;
+  --secondary-sidebar-border-color: rgb(98 79 70 / 55%);
+  --secondary-sidebar-shade-color: rgb(22 17 15 / 65%);
+  --card-bg-color: #281e19;
+  --card-fg-color: #c9aea0;
+  --card-shade-color: rgb(98 79 70 / 55%);
+  --dialog-bg-color: #1f1714;
+  --dialog-fg-color: #c9aea0;
+  --popover-bg-color: #1f1714;
+  --popover-fg-color: #c9aea0;
+  --popover-shade-color: rgb(22 17 15 / 80%);
+  --thumbnail-bg-color: #281e19;
+  --thumbnail-fg-color: #c9aea0;
+  --shade-color: rgb(22 17 15 / 65%);
+  --scrollbar-outline-color: rgb(0 0 0 / 90%);
+  --active-toggle-bg-color: #281e19;
+  --active-toggle-fg-color: #eccfc1;
+  --overview-bg-color: #16110f;
+  --overview-fg-color: #c9aea0;
+}
+
+popover > contents {
+  border-color: color-mix(in srgb, var(--cinder-overlay) 65%, transparent);
+  box-shadow: 0 5px 18px rgb(0 0 0 / 45%);
+}
+
+list.boxed-list,
+list.content,
+list.boxed-list-separate > row,
+.card {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cinder-overlay) 42%, transparent),
+              0 2px 8px rgb(0 0 0 / 24%);
+}
+
+.nautilus-window .nautilus-pathbar {
+  background-color: var(--cinder-surface);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cinder-overlay) 55%, transparent);
+}
+
+.nautilus-window .nautilus-pathbar .nautilus-path-button.current-dir {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.nautilus-window .nautilus-list-view columnview > listview > row:not(:selected):hover,
+.nautilus-window .nautilus-grid-view gridview > child:not(:selected):hover {
+  background-color: var(--cinder-surface);
+}
+
+.nautilus-window .nautilus-list-view columnview > listview > row:selected,
+.nautilus-window .nautilus-grid-view gridview > child:selected {
+  background-color: color-mix(in srgb, var(--cinder-primary) 18%, var(--cinder-surface));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cinder-primary) 55%, transparent);
+  color: var(--cinder-text-bright);
+}
+
+.nautilus-window .floating-bar {
+  background-color: var(--cinder-surface);
+  border: 1px solid color-mix(in srgb, var(--cinder-overlay) 60%, transparent);
+  box-shadow: 0 4px 14px rgb(0 0 0 / 36%);
+}
