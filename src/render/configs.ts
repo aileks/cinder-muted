@@ -1,7 +1,5 @@
 import { applyTones, GENERATED_NOTE, rename } from './substitute.ts'
 
-// Grove configs that only need colors and names swapped.
-
 export function renderCava(template: string, tones: Map<string, string>): string {
   return `# ${GENERATED_NOTE}\n${applyTones(template, tones)}`
 }
@@ -20,7 +18,7 @@ export function renderBatTheme(template: string, tones: Map<string, string>): st
     ['Caspian Harper', 'Kieran Pedrick &lt;kieran@aileks.dev&gt;'],
     [/Cinder Grove/g, 'Cinder Muted'],
     ['theme.dark.cinder-grove', 'theme.dark.cinder-muted'],
-    // Distinct uuid so bat's theme cache keeps grove and muted apart.
+    // Distinct uuid so bat's theme cache keeps the two themes apart.
     ['b3437e78-ba04-4c87-b602-b41da2f987f8', 'd41f9b6e-2c58-4a17-8e0d-6f9c31b2a745'],
   ])
   return applyTones(renamed, tones)

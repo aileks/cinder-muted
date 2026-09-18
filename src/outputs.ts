@@ -10,8 +10,6 @@ import * as configs from './render/configs.ts'
 
 const template = (path: string) => readFileSync(`templates/${path}`, 'utf8')
 
-// Generated files, path to content; build writes them and check compares
-// them. Static files live outside this map.
 export function renderOutputs(): Map<string, string> {
   const p = palette()
   const tones = toneMap()
@@ -19,7 +17,7 @@ export function renderOutputs(): Map<string, string> {
   return new Map([
     ['palette.svg', renderSvg(p)],
     ['nvim/lua/cinder-muted/palette.lua', renderNvimPalette(p)],
-    ['emacs/cinder-muted-theme.el', renderEmacs(template('emacs/cinder-grove-theme.el'), tones)],
+    ['emacs/cinder-muted-theme.el', renderEmacs(template('emacs/template.el'), tones)],
     ['xresources/cinder-muted.xrdb', renderXresources(p)],
     ['gtk/Cinder-Muted-Dark/index.theme', gtk.renderGtkIndex()],
     ['gtk/Cinder-Muted-Dark/gtk-3.0/gtk.css', gtk.GTK3_MAIN_CSS],
@@ -36,17 +34,17 @@ export function renderOutputs(): Map<string, string> {
       gtk.renderGtkOverlay(template('gtk/gtk-4.0.css'), tones),
     ],
     ['gtk/Cinder-Muted-Dark/gtk-4.0/accent.css', gtk.renderGtkAccent4(p)],
-    ['cava/config', configs.renderCava(template('cava/config'), tones)],
-    ['btop/cinder-muted.theme', configs.renderBtop(template('btop/cinder-grove.theme'), tones)],
-    ['qt6ct/cinder-muted.conf', configs.renderQt6ct(template('qt6ct/cinder-grove.conf'), tones)],
+    ['cava/config', configs.renderCava(template('cava/template'), tones)],
+    ['btop/cinder-muted.theme', configs.renderBtop(template('btop/template.theme'), tones)],
+    ['qt6ct/cinder-muted.conf', configs.renderQt6ct(template('qt6ct/template.conf'), tones)],
     [
       'bat/cinder-muted.tmTheme',
-      configs.renderBatTheme(template('bat/cinder-grove.tmTheme'), tones),
+      configs.renderBatTheme(template('bat/template.tmTheme'), tones),
     ],
     ['yazi/theme.toml', renderYaziThemeToml(p)],
     [
       'yazi/cinder-muted.tmTheme',
-      configs.renderYaziTheme(template('yazi/cinder-grove.tmTheme'), tones),
+      configs.renderYaziTheme(template('yazi/template.tmTheme'), tones),
     ],
   ])
 }

@@ -1,13 +1,13 @@
-import type { GroveSlot } from '../palette.ts'
+import type { SourceSlot } from '../palette.ts'
 import { applyTones } from './substitute.ts'
 
-// Grove's adw-gtk3 overlays with retuned colors; the base CSS is vendored,
-// not generated.
+// The adw-gtk3 overlays with retuned colors. The base CSS is vendored, not
+// generated.
 export function renderGtkOverlay(template: string, tones: Map<string, string>): string {
   return applyTones(template, tones)
 }
 
-export function renderGtkAccent3(palette: Record<GroveSlot, string>): string {
+export function renderGtkAccent3(palette: Record<SourceSlot, string>): string {
   return `/* Auto-generated file. Do not edit! */
 @define-color cinder_primary ${palette.primary};
 @define-color accent_bg_color ${palette.primary};
@@ -16,7 +16,7 @@ export function renderGtkAccent3(palette: Record<GroveSlot, string>): string {
 `
 }
 
-export function renderGtkAccent4(palette: Record<GroveSlot, string>): string {
+export function renderGtkAccent4(palette: Record<SourceSlot, string>): string {
   return `/* Auto-generated file. Do not edit! */
 @define-color cinder_primary ${palette.primary};
 @define-color accent_bg_color ${palette.primary};

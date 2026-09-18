@@ -1,5 +1,4 @@
-// Replaces every grove color in a template with its muted tone. Unknown
-// colors throw so new upstream colors fail the build.
+// Unknown colors throw instead of passing through, so a newly added upstream color cannot ship in output unchanged.
 
 const HEX_RE = /#([0-9A-Fa-f]{8}|[0-9A-Fa-f]{6})(?![0-9A-Fa-f])/g
 const RGB_RE = /rgb\((\d+) (\d+) (\d+)( ?\/ ?[0-9.]+%?)?\)/g
@@ -9,14 +8,14 @@ export function applyTones(text: string, tones: Map<string, string>): string {
     let tone = tones.get(`#${digits.toLowerCase()}`)
     if (tone !== undefined) return tone
 
-    // Eight digits are ambiguous: bat writes #RRGGBBAA, qt6ct #AARRGGBB. Try
-    // both splits and keep the one whose rgb part is a known grove color.
+    // Eight digits are ambiguous: bat writes #RRGGBBAA, qt6ct #AARRGGBB.
+    // Try both splits and keep the one whose rgb part is a known source color.
     const suffix = tones.get(`#${digits.slice(0, 6).toLowerCase()}`)
     if (suffix !== undefined) return `#${suffix.slice(1)}${digits.slice(6)}`.toLowerCase()
     const prefix = tones.get(`#${digits.slice(2).toLowerCase()}`)
     if (prefix !== undefined) return `#${digits.slice(0, 2)}${prefix.slice(1)}`.toLowerCase()
 
-    throw new Error(`grove color ${match} is not in the tone map`)
+    throw new Error(`source color ${match} is not in the tone map`)
   })
 
   return hexes.replace(RGB_RE, (match, r: string, g: string, b: string, alpha?: string) => {
@@ -31,7 +30,7 @@ export function applyTones(text: string, tones: Map<string, string>): string {
       return `rgb(${rgb}${alpha ?? ''})`
     }
     if (r === g && g === b && (r === '0' || r === '255')) return match
-    throw new Error(`grove rgb(${r} ${g} ${b}) is not in the tone map`)
+    throw new Error(`source rgb(${r} ${g} ${b}) is not in the tone map`)
   })
 }
 

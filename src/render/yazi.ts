@@ -1,10 +1,8 @@
-import type { GroveSlot } from '../palette.ts'
+import type { SourceSlot } from '../palette.ts'
 
-// Grove's yazi colors separate file types by hue, which a one-hue palette
-// collapses. This renderer assigns lightness steps instead: directories
-// brightest for scanning, executables in the primary tone, media and archives
-// at the warning and error steps.
-export function renderYaziThemeToml(palette: Record<GroveSlot, string>): string {
+// Upstream yazi colors separate file types by hue, which a one-hue palette
+// collapses. This renderer assigns lightness steps instead.
+export function renderYaziThemeToml(palette: Record<SourceSlot, string>): string {
   const p = palette
   return `[app]
 "overall" = { "fg" = "${p.text}" }

@@ -1,6 +1,6 @@
 # Cinder Muted for Xresources
 
-Terminal palette in Xresources form. The slot order matches cinder-grove.nvim's terminal colors, so xrdb and nvim cannot drift apart.
+Terminal palette in Xresources form. The color order matches cinder-grove.nvim's terminal colors.
 
 ## Install
 

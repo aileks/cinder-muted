@@ -1,8 +1,8 @@
 import { clampChroma, formatHex, oklch, parse } from 'culori'
 import type { Oklch } from 'culori'
 
-// Cinder Grove source colors; only their lightness values are used.
-export const GROVE = {
+// Cinder Grove's colors.
+export const SOURCE_COLORS = {
   visual: '#3E3A34',
   background: '#131210',
   container: '#1B1916',
@@ -23,7 +23,7 @@ export const GROVE = {
   cyan: '#58918C',
 } as const
 
-export type GroveSlot = keyof typeof GROVE
+export type SourceSlot = keyof typeof SOURCE_COLORS
 
 export const NEUTRAL_SLOTS = [
   'visual',
@@ -36,7 +36,7 @@ export const NEUTRAL_SLOTS = [
   'text_secondary',
   'text',
   'text_bright',
-] as const satisfies readonly GroveSlot[]
+] as const satisfies readonly SourceSlot[]
 
 export const ACCENT_SLOTS = [
   'primary',
@@ -45,9 +45,8 @@ export const ACCENT_SLOTS = [
   'info',
   'purple',
   'cyan',
-] as const satisfies readonly GroveSlot[]
+] as const satisfies readonly SourceSlot[]
 
-// Tuning knobs; the whole palette re-derives from these.
 export const KNOBS = {
   // 0 blends the seed toward primary, 1 toward secondary.
   blendRatio: 0,
@@ -58,7 +57,7 @@ export const KNOBS = {
   errorChromaScale: 0.75,
 } as const
 
-function groveOklch(hex: string): Oklch {
+function parseOklch(hex: string): Oklch {
   const color = oklch(parse(hex))
   if (color == null) throw new Error(`not a color: ${hex}`)
   return color
@@ -74,8 +73,8 @@ function toHex(color: Oklch): string {
 }
 
 export function seed(): Oklch {
-  const primary = groveOklch(GROVE.primary)
-  const secondary = groveOklch(GROVE.secondary)
+  const primary = parseOklch(SOURCE_COLORS.primary)
+  const secondary = parseOklch(SOURCE_COLORS.secondary)
   const t = KNOBS.blendRatio
   const hue = primary.h! + shortestHueDelta(primary.h!, secondary.h!) * t
   return {
@@ -87,16 +86,16 @@ export function seed(): Oklch {
 }
 
 export function neutralFromHex(hex: string): string {
-  const base = groveOklch(hex)
+  const base = parseOklch(hex)
   return toHex({ ...base, c: base.c * KNOBS.neutralChromaScale, h: seed().h! })
 }
 
-const accentLightnesses = ACCENT_SLOTS.map((slot) => groveOklch(GROVE[slot]).l).sort(
+const accentLightnesses = ACCENT_SLOTS.map((slot) => parseOklch(SOURCE_COLORS[slot]).l).sort(
   (a, b) => b - a,
 )
 
-// Grove's info, purple, and cyan differ only by hue at nearly one lightness,
-// so accent lightness is re-spaced evenly by grove rank.
+// Upstream info, purple, and cyan differ only by hue at nearly one lightness.
+// Accent lightness is re-spaced evenly by upstream rank.
 export function ladderLightness(l: number): number {
   const rank = accentLightnesses.filter((accentL) => accentL > l).length
   const step =
@@ -105,7 +104,7 @@ export function ladderLightness(l: number): number {
 }
 
 export function accentFromHex(hex: string): string {
-  const base = groveOklch(hex)
+  const base = parseOklch(hex)
   return toHex({
     mode: 'oklch',
     l: ladderLightness(base.l),
@@ -116,27 +115,26 @@ export function accentFromHex(hex: string): string {
 
 // The one hue exception: errors stay red, muted to the theme's chroma.
 export function errorFromHex(hex: string): string {
-  const base = groveOklch(hex)
+  const base = parseOklch(hex)
   return toHex({ ...base, c: base.c * KNOBS.errorChromaScale })
 }
 
-function slotTone(slot: GroveSlot): string {
-  if (slot === 'error') return errorFromHex(GROVE.error)
-  if ((NEUTRAL_SLOTS as readonly string[]).includes(slot)) return neutralFromHex(GROVE[slot])
-  return accentFromHex(GROVE[slot])
+function slotTone(slot: SourceSlot): string {
+  if (slot === 'error') return errorFromHex(SOURCE_COLORS.error)
+  if ((NEUTRAL_SLOTS as readonly string[]).includes(slot)) return neutralFromHex(SOURCE_COLORS[slot])
+  return accentFromHex(SOURCE_COLORS[slot])
 }
 
-export function palette(): Record<GroveSlot, string> {
+export function palette(): Record<SourceSlot, string> {
   return Object.fromEntries(
-    (Object.keys(GROVE) as GroveSlot[]).map((slot) => [slot, slotTone(slot)]),
-  ) as Record<GroveSlot, string>
+    (Object.keys(SOURCE_COLORS) as SourceSlot[]).map((slot) => [slot, slotTone(slot)]),
+  ) as Record<SourceSlot, string>
 }
 
-// Grove color to muted tone, keyed by lowercase hex and 'r,g,b' decimal.
 export function toneMap(): Map<string, string> {
   const extras = [
-    '#827B71', // grove Xresources color8
-    '#E8A64D', // grove Xresources color11
+    '#827B71', // Xresources color8
+    '#E8A64D', // Xresources color11
     '#8D5533', // btop cpu_box
     '#C87546', // btop used_mid
     '#34312D', // qt6ct shadow
@@ -145,12 +143,12 @@ export function toneMap(): Map<string, string> {
     '#878077', // qt6ct disabled highlight
   ]
   const derive = (hex: string): string => {
-    if (hex.toLowerCase() === GROVE.error) return errorFromHex(hex)
+    if (hex.toLowerCase() === SOURCE_COLORS.error) return errorFromHex(hex)
     // Low-chroma extras read as neutrals, the rest as accents.
-    return groveOklch(hex).c < 0.06 ? neutralFromHex(hex) : accentFromHex(hex)
+    return parseOklch(hex).c < 0.06 ? neutralFromHex(hex) : accentFromHex(hex)
   }
-  const entries: [string, string][] = (Object.keys(GROVE) as GroveSlot[]).map((slot) => [
-    GROVE[slot],
+  const entries: [string, string][] = (Object.keys(SOURCE_COLORS) as SourceSlot[]).map((slot) => [
+    SOURCE_COLORS[slot],
     slotTone(slot),
   ])
   for (const hex of extras) entries.push([hex, derive(hex)])
@@ -182,4 +180,4 @@ export const TERMINAL_SLOTS = [
   'purple',
   'cyan',
   'text_bright',
-] as const satisfies readonly GroveSlot[]
+] as const satisfies readonly SourceSlot[]

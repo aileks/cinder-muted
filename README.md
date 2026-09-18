@@ -4,8 +4,6 @@ Muted monochrome variant of my [Cinder Grove](https://github.com/aileks/cinder-g
 
 ![Cinder Muted color palette](./palette.svg)
 
-The palette is tones of Cinder Grove's primary `#E17A3F` accent. Dark tones for backgrounds, light tones for text, and an even lightness ladder for the accents. Errors stay red so they pop.
-
 ## Ports
 
 - [bat](bat/README.md)
@@ -28,10 +26,7 @@ pnpm check   # fail if committed outputs are out of sync
 pnpm test
 ```
 
-- `src/palette.ts` derives the palette from the Cinder Grove source colors; the tuning knobs (seed blend, chroma levels, accent ladder, error strength) live in `KNOBS`.
-- `templates/` holds verbatim copies of the Cinder Grove config files each renderer starts from. When a port changes, copy the new file in and re-render.
-- `applyTones` throws on any color it does not recognize, so new upstream colors fail the build instead of leaking old colors.
-- The Neovim palette renders into the `nvim/` submodule; after palette changes, commit inside the submodule, then commit the new pointer here.
+The palette derives from the Cinder Grove colors in `src/palette.ts`. `templates/` holds one upstream config per port; when a port changes, copy the new file in and re-render. The Neovim palette renders into the `nvim/` submodule, so commit inside the submodule first, then the new pointer here.
 
 ## License
 

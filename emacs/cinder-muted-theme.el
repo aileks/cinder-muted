@@ -12,8 +12,7 @@
 ;; Auto-generated file. Do not edit!
 ;; Derived from cinder-grove.el.
 
-;; A warm, muted dark theme that's easy on the eyes.  Ported from
-;; cinder-grove.nvim (https://github.com/aileks/cinder-grove.nvim).
+;; A warm, muted dark theme that's easy on the eyes.
 
 ;; Covers built-in faces plus corfu, vertico, marginalia, orderless,
 ;; consult, embark, which-key, avy, ace-window, anzu, transient,

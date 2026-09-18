@@ -1,11 +1,10 @@
-import { KNOBS, seed, type GroveSlot } from '../palette.ts'
+import { KNOBS, seed, type SourceSlot } from '../palette.ts'
 
 const SWATCH_WIDTH = 180
 const SWATCH_HEIGHT = 120
 const PER_ROW = 4
 
-// Grouped by role: surfaces, text, accents, then error.
-const SWATCHES: { slot: GroveSlot; label: string }[] = [
+const SWATCHES: { slot: SourceSlot; label: string }[] = [
   { slot: 'background', label: 'background' },
   { slot: 'container', label: 'container' },
   { slot: 'surface', label: 'surface' },
@@ -32,7 +31,7 @@ const DARK_SLOTS = new Set<string>([
   'overlay',
 ])
 
-export function renderSvg(palette: Record<GroveSlot, string>): string {
+export function renderSvg(palette: Record<SourceSlot, string>): string {
   const rows = Math.ceil(SWATCHES.length / PER_ROW)
   const footerHeight = 36
   const width = SWATCH_WIDTH * PER_ROW

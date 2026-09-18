@@ -1,8 +1,7 @@
-import { TERMINAL_SLOTS, type GroveSlot } from '../palette.ts'
+import { TERMINAL_SLOTS, type SourceSlot } from '../palette.ts'
 
-// The slot order is shared with cinder-grove's terminal colors, so Xresources
-// and nvim cannot drift apart.
-export function renderXresources(palette: Record<GroveSlot, string>): string {
+// Slot order matches cinder-grove.nvim's terminal colors.
+export function renderXresources(palette: Record<SourceSlot, string>): string {
   const colors = TERMINAL_SLOTS.map(
     (slot, index) => `*.color${index}:  ${palette[slot].toUpperCase()}`,
   )
