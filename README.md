@@ -4,51 +4,26 @@ Muted monochrome variant of my [Cinder Grove](https://github.com/aileks/cinder-g
 
 ![Cinder Muted color palette](./palette.svg)
 
-The palette is tones of Cinder Grove's primary `#E17A3F` accnet. Dark tones for backgrounds, light tones for text, and an even lightness ladder for the accents. Errors stay red so they pop.
+The palette is tones of Cinder Grove's primary `#E17A3F` accent. Dark tones for backgrounds, light tones for text, and an even lightness ladder for the accents. Errors stay red so they pop.
 
 ## Apps
 
-| App | File | Placement |
+Each port has its own README with install instructions.
+
+| App | Files | Install |
 | --- | --- | --- |
-| Neovim | `nvim/` | runtimepath plugin, requires cinder-grove.nvim |
-| Emacs | `emacs/cinder-muted-theme.el` | `custom-theme-load-path` |
-| Xresources | `xresources/cinder-muted.xrdb` | `#include` or paste into `~/.Xresources` |
-| GTK 3/4 | `gtk/Cinder-Muted-Dark/` | `gtk/install.sh` |
-| cava | `cava/config` | `~/.config/cava/config` |
-| btop | `btop/cinder-muted.theme` | `~/.config/btop/themes/`, set `color_theme = "cinder-muted"` |
-| qt6ct | `qt6ct/cinder-muted.conf` | `/usr/local/share/qt6ct/colors/` (or another `qt6ct` color dir) |
-| bat | `bat/cinder-muted.tmTheme` | `$(bat --config-dir)/themes/`, set `--theme=cinder-muted` |
-| yazi | `yazi/theme.toml`, `yazi/cinder-muted.tmTheme` | `~/.config/yazi/` |
+| [Neovim](docs/nvim.md) | `colors/`, `lua/` at the repo root | plugin manager or local runtimepath |
+| [Emacs](docs/emacs.md) | `cinder-muted-theme.el` at the repo root | package recipe or manual |
+| [Xresources](xresources/README.md) | `xresources/cinder-muted.xrdb` | include or paste into `~/.Xresources` |
+| [GTK 3/4](gtk/README.md) | `gtk/Cinder-Muted-Dark/` | `gtk/install.sh` |
+| [Stylus](stylus/README.md) | `stylus/cinder-muted.user.css` | import into the Stylus extension |
+| [cava](cava/README.md) | `cava/config` | copy to `~/.config/cava/config` |
+| [btop](btop/README.md) | `btop/cinder-muted.theme` | copy and set `color_theme` |
+| [qt6ct](qt6ct/README.md) | `qt6ct/cinder-muted.conf` | copy into a qt6ct color dir |
+| [bat](bat/README.md) | `bat/cinder-muted.tmTheme` | copy, rebuild cache, set `--theme` |
+| [yazi](yazi/README.md) | `yazi/theme.toml`, `yazi/cinder-muted.tmTheme` | copy to `~/.config/yazi/` |
 
-### Neovim
-
-The colorscheme is a thin layer that feeds the cinder-muted palette through cinder-grove.nvim's palette overrides, so all of grove's highlight groups, plugin integrations, and terminal colors re-resolve in muted tones. cinder-grove.nvim must be installed.
-
-```lua
-{
-  'aileks/cinder-grove.nvim',
-  lazy = false,
-  priority = 1000,
-}
-
-vim.opt.runtimepath:prepend('/path/to/cinder-monochrome/nvim')
-vim.cmd.colorscheme('cinder-muted')
-```
-
-lualine picks it up through `theme = 'auto'` via the bundled `lua/lualine/themes/cinder-muted.lua`. fzf.vim and minimap.vim users can use `require('cinder-grove.extras')` as documented in grove's README; the extras read the active palette.
-
-### Emacs
-
-```elisp
-(add-to-list 'custom-theme-load-path "/path/to/cinder-monochrome/emacs")
-(setq doom-theme 'cinder-muted)
-```
-
-The `cg-transparent` option from cinder-grove.el works unchanged.
-
-### GTK
-
-`gtk/install.sh` copies `Cinder-Muted-Dark` to `~/.local/share/themes/`, writes the libadwaita overlay into `~/.config/gtk-4.0/gtk.css` (backing up any existing file), and points gsettings at the theme. The stock adw-gtk3 base CSS is vendored under `gtk/Cinder-Muted-Dark/` (see `gtk/VENDOR.txt`).
+The repo root doubles as the Neovim plugin and the Emacs package, so both plugin managers consume it straight from git. Cinder Muted installs side by side with Cinder Grove everywhere.
 
 ## Development
 

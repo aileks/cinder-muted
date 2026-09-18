@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs'
 import { renderSvg } from './render/svg.ts'
 import { palette, toneMap } from './palette.ts'
 import { renderNvimPalette } from './render/nvim.ts'
+import { renderStylus } from './render/stylus.ts'
 import { renderEmacs } from './render/emacs.ts'
 import { renderXresources } from './render/xresources.ts'
 import * as gtk from './render/gtk.ts'
@@ -17,8 +18,8 @@ export function renderOutputs(): Map<string, string> {
 
   return new Map([
     ['palette.svg', renderSvg(p)],
-    ['nvim/lua/cinder-muted/palette.lua', renderNvimPalette(p)],
-    ['emacs/cinder-muted-theme.el', renderEmacs(template('emacs/cinder-grove-theme.el'), tones)],
+    ['lua/cinder-muted/palette.lua', renderNvimPalette(p)],
+    ['cinder-muted-theme.el', renderEmacs(template('emacs/cinder-grove-theme.el'), tones)],
     ['xresources/cinder-muted.xrdb', renderXresources(p)],
     ['gtk/Cinder-Muted-Dark/index.theme', gtk.renderGtkIndex()],
     ['gtk/Cinder-Muted-Dark/gtk-3.0/gtk.css', gtk.GTK3_MAIN_CSS],
@@ -47,5 +48,6 @@ export function renderOutputs(): Map<string, string> {
       'yazi/cinder-muted.tmTheme',
       configs.renderYaziTheme(template('yazi/cinder-grove.tmTheme'), tones),
     ],
+    ['stylus/cinder-muted.user.css', renderStylus(p)],
   ])
 }
