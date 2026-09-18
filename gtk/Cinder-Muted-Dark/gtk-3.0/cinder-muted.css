@@ -1,20 +1,20 @@
 @import url("accent.css");
 
-@define-color cinder_background #16110f;
-@define-color cinder_container #1f1714;
-@define-color cinder_surface #281e19;
-@define-color cinder_overlay #624f46;
-@define-color cinder_text_muted #624f46;
-@define-color cinder_text_subtle #a78e82;
-@define-color cinder_text_secondary #b99f93;
-@define-color cinder_text #c9aea0;
-@define-color cinder_text_bright #eccfc1;
-@define-color cinder_success #df8452;
+@define-color cinder_background #15110f;
+@define-color cinder_container #1e1815;
+@define-color cinder_surface #271e1a;
+@define-color cinder_overlay #5f5049;
+@define-color cinder_text_muted #5f5049;
+@define-color cinder_text_subtle #a39086;
+@define-color cinder_text_secondary #b5a196;
+@define-color cinder_text #c5afa4;
+@define-color cinder_text_bright #e9d1c5;
+@define-color cinder_success #d98c63;
 @define-color cinder_error #a45751;
-@define-color cinder_warning #ffa474;
-@define-color cinder_info #ac5621;
-@define-color cinder_purple #bd6532;
-@define-color cinder_cyan #ce7442;
+@define-color cinder_warning #ffbd9b;
+@define-color cinder_info #944d24;
+@define-color cinder_purple #ab6139;
+@define-color cinder_cyan #c2764e;
 
 @define-color destructive_bg_color @cinder_error;
 @define-color destructive_fg_color white;

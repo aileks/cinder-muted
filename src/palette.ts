@@ -50,10 +50,10 @@ export const ACCENT_SLOTS = [
 export const KNOBS = {
   // 0 blends the seed toward primary, 1 toward secondary.
   blendRatio: 0,
-  accentChroma: 0.13,
-  accentLadderTop: 0.8,
-  accentLadderBottom: 0.55,
-  neutralChromaScale: 2.2,
+  accentChroma: 0.11,
+  accentLadderTop: 0.85,
+  accentLadderBottom: 0.5,
+  neutralChromaScale: 1.8,
   errorChromaScale: 0.75,
 } as const
 

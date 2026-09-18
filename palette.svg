@@ -27,105 +27,105 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       font-size: 12px;
       text-anchor: middle;
-      fill: #624f46;
+      fill: #5f5049;
     }
   </style>
 
   <g transform="translate(0 0)">
-    <rect width="180" height="120" fill="#16110f" />
-    <text class="hex" x="90" y="48" fill="#eccfc1">#16110F</text>
-    <text class="name" x="90" y="74" fill="#eccfc1">background</text>
+    <rect width="180" height="120" fill="#15110f" />
+    <text class="hex" x="90" y="48" fill="#e9d1c5">#15110F</text>
+    <text class="name" x="90" y="74" fill="#e9d1c5">background</text>
   </g>
 
   <g transform="translate(180 0)">
-    <rect width="180" height="120" fill="#1f1714" />
-    <text class="hex" x="90" y="48" fill="#eccfc1">#1F1714</text>
-    <text class="name" x="90" y="74" fill="#eccfc1">container</text>
+    <rect width="180" height="120" fill="#1e1815" />
+    <text class="hex" x="90" y="48" fill="#e9d1c5">#1E1815</text>
+    <text class="name" x="90" y="74" fill="#e9d1c5">container</text>
   </g>
 
   <g transform="translate(360 0)">
-    <rect width="180" height="120" fill="#281e19" />
-    <text class="hex" x="90" y="48" fill="#eccfc1">#281E19</text>
-    <text class="name" x="90" y="74" fill="#eccfc1">surface</text>
+    <rect width="180" height="120" fill="#271e1a" />
+    <text class="hex" x="90" y="48" fill="#e9d1c5">#271E1A</text>
+    <text class="name" x="90" y="74" fill="#e9d1c5">surface</text>
   </g>
 
   <g transform="translate(540 0)">
-    <rect width="180" height="120" fill="#46372f" />
-    <text class="hex" x="90" y="48" fill="#eccfc1">#46372F</text>
-    <text class="name" x="90" y="74" fill="#eccfc1">visual</text>
+    <rect width="180" height="120" fill="#443831" />
+    <text class="hex" x="90" y="48" fill="#e9d1c5">#443831</text>
+    <text class="name" x="90" y="74" fill="#e9d1c5">visual</text>
   </g>
 
   <g transform="translate(0 120)">
-    <rect width="180" height="120" fill="#624f46" />
-    <text class="hex" x="90" y="48" fill="#eccfc1">#624F46</text>
-    <text class="name" x="90" y="74" fill="#eccfc1">overlay</text>
+    <rect width="180" height="120" fill="#5f5049" />
+    <text class="hex" x="90" y="48" fill="#e9d1c5">#5F5049</text>
+    <text class="name" x="90" y="74" fill="#e9d1c5">overlay</text>
   </g>
 
   <g transform="translate(180 120)">
-    <rect width="180" height="120" fill="#a78e82" />
-    <text class="hex" x="90" y="48" fill="#16110f">#A78E82</text>
-    <text class="name" x="90" y="74" fill="#16110f">text subtle</text>
+    <rect width="180" height="120" fill="#a39086" />
+    <text class="hex" x="90" y="48" fill="#15110f">#A39086</text>
+    <text class="name" x="90" y="74" fill="#15110f">text subtle</text>
   </g>
 
   <g transform="translate(360 120)">
-    <rect width="180" height="120" fill="#b99f93" />
-    <text class="hex" x="90" y="48" fill="#16110f">#B99F93</text>
-    <text class="name" x="90" y="74" fill="#16110f">text secondary</text>
+    <rect width="180" height="120" fill="#b5a196" />
+    <text class="hex" x="90" y="48" fill="#15110f">#B5A196</text>
+    <text class="name" x="90" y="74" fill="#15110f">text secondary</text>
   </g>
 
   <g transform="translate(540 120)">
-    <rect width="180" height="120" fill="#c9aea0" />
-    <text class="hex" x="90" y="48" fill="#16110f">#C9AEA0</text>
-    <text class="name" x="90" y="74" fill="#16110f">text</text>
+    <rect width="180" height="120" fill="#c5afa4" />
+    <text class="hex" x="90" y="48" fill="#15110f">#C5AFA4</text>
+    <text class="name" x="90" y="74" fill="#15110f">text</text>
   </g>
 
   <g transform="translate(0 240)">
-    <rect width="180" height="120" fill="#eccfc1" />
-    <text class="hex" x="90" y="48" fill="#16110f">#ECCFC1</text>
-    <text class="name" x="90" y="74" fill="#16110f">text bright</text>
+    <rect width="180" height="120" fill="#e9d1c5" />
+    <text class="hex" x="90" y="48" fill="#15110f">#E9D1C5</text>
+    <text class="name" x="90" y="74" fill="#15110f">text bright</text>
   </g>
 
   <g transform="translate(180 240)">
     <rect width="180" height="120" fill="#a45751" />
-    <text class="hex" x="90" y="48" fill="#16110f">#A45751</text>
-    <text class="name" x="90" y="74" fill="#16110f">error</text>
+    <text class="hex" x="90" y="48" fill="#15110f">#A45751</text>
+    <text class="name" x="90" y="74" fill="#15110f">error</text>
   </g>
 
   <g transform="translate(360 240)">
-    <rect width="180" height="120" fill="#f09361" />
-    <text class="hex" x="90" y="48" fill="#16110f">#F09361</text>
-    <text class="name" x="90" y="74" fill="#16110f">primary</text>
+    <rect width="180" height="120" fill="#f1a278" />
+    <text class="hex" x="90" y="48" fill="#15110f">#F1A278</text>
+    <text class="name" x="90" y="74" fill="#15110f">primary</text>
   </g>
 
   <g transform="translate(540 240)">
-    <rect width="180" height="120" fill="#df8452" />
-    <text class="hex" x="90" y="48" fill="#16110f">#DF8452</text>
-    <text class="name" x="90" y="74" fill="#16110f">secondary</text>
+    <rect width="180" height="120" fill="#d98c63" />
+    <text class="hex" x="90" y="48" fill="#15110f">#D98C63</text>
+    <text class="name" x="90" y="74" fill="#15110f">secondary</text>
   </g>
 
   <g transform="translate(0 360)">
-    <rect width="180" height="120" fill="#ffa474" />
-    <text class="hex" x="90" y="48" fill="#16110f">#FFA474</text>
-    <text class="name" x="90" y="74" fill="#16110f">warning</text>
+    <rect width="180" height="120" fill="#ffbd9b" />
+    <text class="hex" x="90" y="48" fill="#15110f">#FFBD9B</text>
+    <text class="name" x="90" y="74" fill="#15110f">warning</text>
   </g>
 
   <g transform="translate(180 360)">
-    <rect width="180" height="120" fill="#ac5621" />
-    <text class="hex" x="90" y="48" fill="#16110f">#AC5621</text>
-    <text class="name" x="90" y="74" fill="#16110f">info</text>
+    <rect width="180" height="120" fill="#944d24" />
+    <text class="hex" x="90" y="48" fill="#15110f">#944D24</text>
+    <text class="name" x="90" y="74" fill="#15110f">info</text>
   </g>
 
   <g transform="translate(360 360)">
-    <rect width="180" height="120" fill="#bd6532" />
-    <text class="hex" x="90" y="48" fill="#16110f">#BD6532</text>
-    <text class="name" x="90" y="74" fill="#16110f">purple (ANSI)</text>
+    <rect width="180" height="120" fill="#ab6139" />
+    <text class="hex" x="90" y="48" fill="#15110f">#AB6139</text>
+    <text class="name" x="90" y="74" fill="#15110f">purple (ANSI)</text>
   </g>
 
   <g transform="translate(540 360)">
-    <rect width="180" height="120" fill="#ce7442" />
-    <text class="hex" x="90" y="48" fill="#16110f">#CE7442</text>
-    <text class="name" x="90" y="74" fill="#16110f">cyan (ANSI)</text>
+    <rect width="180" height="120" fill="#c2764e" />
+    <text class="hex" x="90" y="48" fill="#15110f">#C2764E</text>
+    <text class="name" x="90" y="74" fill="#15110f">cyan (ANSI)</text>
   </g>
 
-  <text class="knobs" x="360" y="504">seed L 0.685 C 0.147 H 48.2  |  accentChroma 0.13  |  accentLadder 0.8-0.55  |  neutralChromaScale 2.2  |  errorChromaScale 0.75</text>
+  <text class="knobs" x="360" y="504">seed L 0.685 C 0.147 H 48.2  |  accentChroma 0.11  |  accentLadder 0.85-0.5  |  neutralChromaScale 1.8  |  errorChromaScale 0.75</text>
 </svg>
