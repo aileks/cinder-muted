@@ -98,8 +98,7 @@ const accentLightnesses = ACCENT_SLOTS.map((slot) => parseOklch(SOURCE_COLORS[sl
 // Accent lightness is re-spaced evenly by upstream rank.
 export function ladderLightness(l: number): number {
   const rank = accentLightnesses.filter((accentL) => accentL > l).length
-  const step =
-    (KNOBS.accentLadderTop - KNOBS.accentLadderBottom) / (accentLightnesses.length - 1)
+  const step = (KNOBS.accentLadderTop - KNOBS.accentLadderBottom) / (accentLightnesses.length - 1)
   return Math.min(0.9, Math.max(0.3, KNOBS.accentLadderTop - rank * step))
 }
 
@@ -121,7 +120,8 @@ export function errorFromHex(hex: string): string {
 
 function slotTone(slot: SourceSlot): string {
   if (slot === 'error') return errorFromHex(SOURCE_COLORS.error)
-  if ((NEUTRAL_SLOTS as readonly string[]).includes(slot)) return neutralFromHex(SOURCE_COLORS[slot])
+  if ((NEUTRAL_SLOTS as readonly string[]).includes(slot))
+    return neutralFromHex(SOURCE_COLORS[slot])
   return accentFromHex(SOURCE_COLORS[slot])
 }
 

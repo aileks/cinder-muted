@@ -20,8 +20,6 @@ export function renderRofi(template: string, tones: Map<string, string>): string
   return `/* ${GENERATED_NOTE} */\n${applyTones(template, tones)}`
 }
 
-
-
 export function renderStHeader(template: string, tones: Map<string, string>): string {
   return `/* ${GENERATED_NOTE} */\n${applyTones(template, tones)}`
 }

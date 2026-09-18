@@ -23,13 +23,7 @@ const SWATCHES: { slot: SourceSlot; label: string }[] = [
   { slot: 'cyan', label: 'cyan (ANSI)' },
 ]
 
-const DARK_SLOTS = new Set<string>([
-  'background',
-  'container',
-  'surface',
-  'visual',
-  'overlay',
-])
+const DARK_SLOTS = new Set<string>(['background', 'container', 'surface', 'visual', 'overlay'])
 
 export function renderSvg(palette: Record<SourceSlot, string>): string {
   const rows = Math.ceil(SWATCHES.length / PER_ROW)

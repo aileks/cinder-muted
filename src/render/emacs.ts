@@ -11,7 +11,10 @@ export function renderEmacs(template: string, tones: Map<string, string>): strin
     // Drop the nvim port credit. The muted theme derives from cinder-grove.el,
     // and the blanket rename below would otherwise turn it into a false
     // cinder-muted.nvim claim.
-    [/  Ported from\n;; cinder-grove\.nvim \(https:\/\/github\.com\/aileks\/cinder-grove\.nvim\)\./, ''],
+    [
+      /  Ported from\n;; cinder-grove\.nvim \(https:\/\/github\.com\/aileks\/cinder-grove\.nvim\)\./,
+      '',
+    ],
     ['https://github.com/aileks/cinder-grove.el', 'https://github.com/aileks/cinder-muted'],
     [/;; Copyright \(C\) \d+ aileks\n\n/, ''],
     [/;; Author: aileks/, AUTHOR],

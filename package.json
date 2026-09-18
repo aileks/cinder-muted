@@ -5,12 +5,15 @@
   "scripts": {
     "build": "tsx src/build.ts",
     "check": "tsx src/check.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src"
   },
   "devDependencies": {
     "@types/culori": "^4.0.1",
     "@types/node": "^26.6.1",
     "culori": "^4.0.2",
+    "prettier": "^3.9.7",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2",
     "vitest": "^5.0.1"

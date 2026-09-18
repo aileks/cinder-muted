@@ -33,7 +33,11 @@ describe('palette', () => {
       if (slot === 'error') continue
       const delta = Math.abs(hue(hex) - expected)
       // Hue wobbles through the hex roundtrip at low chroma. Accents are exact.
-      const tolerance = slot.includes('text') || ['background', 'container', 'surface', 'visual', 'overlay'].includes(slot) ? 10 : 2
+      const tolerance =
+        slot.includes('text') ||
+        ['background', 'container', 'surface', 'visual', 'overlay'].includes(slot)
+          ? 10
+          : 2
       expect(Math.min(delta, 360 - delta), slot).toBeLessThan(tolerance)
     }
   })
@@ -59,7 +63,14 @@ describe('palette', () => {
   })
 
   it('keeps the neutral ramp ordered like the source', () => {
-    const ramp = ['background', 'container', 'surface', 'overlay', 'text_subtle', 'text_bright'] as const
+    const ramp = [
+      'background',
+      'container',
+      'surface',
+      'overlay',
+      'text_subtle',
+      'text_bright',
+    ] as const
     const lightnesses = ramp.map((slot) => oklch(parse(p[slot])!)!.l)
     expect(lightnesses).toEqual([...lightnesses].sort((a, b) => a - b))
   })

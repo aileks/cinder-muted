@@ -37,10 +37,7 @@ export function renderOutputs(): Map<string, string> {
     ['cava/config', configs.renderCava(template('cava/template'), tones)],
     ['btop/cinder-muted.theme', configs.renderBtop(template('btop/template.theme'), tones)],
     ['qt6ct/cinder-muted.conf', configs.renderQt6ct(template('qt6ct/template.conf'), tones)],
-    [
-      'bat/cinder-muted.tmTheme',
-      configs.renderBatTheme(template('bat/template.tmTheme'), tones),
-    ],
+    ['bat/cinder-muted.tmTheme', configs.renderBatTheme(template('bat/template.tmTheme'), tones)],
     ['yazi/theme.toml', renderYaziThemeToml(p)],
     [
       'yazi/cinder-muted.tmTheme',
