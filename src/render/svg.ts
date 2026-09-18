@@ -1,29 +1,35 @@
+import { oklch, parse } from 'culori'
 import { KNOBS, seed, type SourceSlot } from '../palette.ts'
 
 const SWATCH_WIDTH = 180
 const SWATCH_HEIGHT = 120
 const PER_ROW = 4
 
-const SWATCHES: { slot: SourceSlot; label: string }[] = [
-  { slot: 'background', label: 'background' },
-  { slot: 'container', label: 'container' },
-  { slot: 'surface', label: 'surface' },
-  { slot: 'visual', label: 'visual' },
-  { slot: 'overlay', label: 'overlay' },
-  { slot: 'text_subtle', label: 'text subtle' },
-  { slot: 'text_secondary', label: 'text secondary' },
-  { slot: 'text', label: 'text' },
-  { slot: 'text_bright', label: 'text bright' },
-  { slot: 'error', label: 'error' },
-  { slot: 'primary', label: 'primary' },
-  { slot: 'secondary', label: 'secondary' },
-  { slot: 'warning', label: 'warning' },
-  { slot: 'info', label: 'info' },
-  { slot: 'purple', label: 'purple (ANSI)' },
-  { slot: 'cyan', label: 'cyan (ANSI)' },
+const SWATCHES: SourceSlot[] = [
+  'background',
+  'container',
+  'surface',
+  'visual',
+  'overlay',
+  'text_subtle',
+  'text_secondary',
+  'text',
+  'text_bright',
+  'error',
+  'primary',
+  'secondary',
+  'warning',
+  'info',
+  'tertiary',
+  'quaternary',
 ]
 
 const DARK_SLOTS = new Set<string>(['background', 'container', 'surface', 'visual', 'overlay'])
+
+function oklchString(hex: string): string {
+  const color = oklch(parse(hex))!
+  return `oklch(${color.l.toFixed(3)} ${color.c.toFixed(3)} ${color.h!.toFixed(1)})`
+}
 
 export function renderSvg(palette: Record<SourceSlot, string>): string {
   const rows = Math.ceil(SWATCHES.length / PER_ROW)
@@ -32,7 +38,7 @@ export function renderSvg(palette: Record<SourceSlot, string>): string {
   const height = SWATCH_HEIGHT * rows + footerHeight
   const s = seed()
 
-  const swatches = SWATCHES.map(({ slot, label }, index) => {
+  const swatches = SWATCHES.map((slot, index) => {
     const hex = palette[slot]
     const x = (index % PER_ROW) * SWATCH_WIDTH
     const y = Math.floor(index / PER_ROW) * SWATCH_HEIGHT
@@ -40,7 +46,7 @@ export function renderSvg(palette: Record<SourceSlot, string>): string {
     return `  <g transform="translate(${x} ${y})">
     <rect width="${SWATCH_WIDTH}" height="${SWATCH_HEIGHT}" fill="${hex}" />
     <text class="hex" x="${SWATCH_WIDTH / 2}" y="48" fill="${fill}">${hex.toUpperCase()}</text>
-    <text class="name" x="${SWATCH_WIDTH / 2}" y="74" fill="${fill}">${label}</text>
+    <text class="oklch" x="${SWATCH_WIDTH / 2}" y="74" fill="${fill}">${oklchString(hex)}</text>
   </g>`
   }).join('\n\n')
 
@@ -71,7 +77,7 @@ export function renderSvg(palette: Record<SourceSlot, string>): string {
       text-anchor: middle;
     }
 
-    .name {
+    .oklch {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       font-size: 11px;
       text-anchor: middle;

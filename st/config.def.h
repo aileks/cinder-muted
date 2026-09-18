@@ -1,4 +1,3 @@
-/* Auto-generated file. Do not edit! */
 /* See LICENSE file for copyright and license details. */
 
 /*
@@ -128,24 +127,24 @@ char *xdndescchar = " !\"#$&'()*;<>?[\\]^`{|}~";
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#15110f",
-	"#a45751",
-	"#d98c63",
-	"#ffbd9b",
-	"#944d24",
-	"#ab6139",
-	"#c2764e",
-	"#b5a196",
+	"#15110F",
+	"#A45751",
+	"#D98C63",
+	"#FFBD9B",
+	"#C2764E",
+	"#CA7D55",
+	"#D2845C",
+	"#B5A196",
 
 	/* 8 bright colors */
-	"#5f5049",
-	"#a45751",
-	"#d98c63",
-	"#ffbd9b",
-	"#944d24",
-	"#ab6139",
-	"#c2764e",
-	"#e9d1c5",
+	"#5F5049",
+	"#F1A278",
+	"#ED9F75",
+	"#FFD4BE",
+	"#D68960",
+	"#DE9067",
+	"#E6976E",
+	"#E9D1C5",
 
 	[255] = 0,
 

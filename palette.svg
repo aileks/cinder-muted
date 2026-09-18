@@ -17,7 +17,7 @@
       text-anchor: middle;
     }
 
-    .name {
+    .oklch {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       font-size: 11px;
       text-anchor: middle;
@@ -34,97 +34,97 @@
   <g transform="translate(0 0)">
     <rect width="180" height="120" fill="#15110f" />
     <text class="hex" x="90" y="48" fill="#e9d1c5">#15110F</text>
-    <text class="name" x="90" y="74" fill="#e9d1c5">background</text>
+    <text class="oklch" x="90" y="74" fill="#e9d1c5">oklch(0.182 0.008 48.3)</text>
   </g>
 
   <g transform="translate(180 0)">
     <rect width="180" height="120" fill="#1e1815" />
     <text class="hex" x="90" y="48" fill="#e9d1c5">#1E1815</text>
-    <text class="name" x="90" y="74" fill="#e9d1c5">container</text>
+    <text class="oklch" x="90" y="74" fill="#e9d1c5">oklch(0.215 0.011 48.2)</text>
   </g>
 
   <g transform="translate(360 0)">
     <rect width="180" height="120" fill="#271e1a" />
     <text class="hex" x="90" y="48" fill="#e9d1c5">#271E1A</text>
-    <text class="name" x="90" y="74" fill="#e9d1c5">surface</text>
+    <text class="oklch" x="90" y="74" fill="#e9d1c5">oklch(0.244 0.016 45.3)</text>
   </g>
 
   <g transform="translate(540 0)">
     <rect width="180" height="120" fill="#443831" />
     <text class="hex" x="90" y="48" fill="#e9d1c5">#443831</text>
-    <text class="name" x="90" y="74" fill="#e9d1c5">visual</text>
+    <text class="oklch" x="90" y="74" fill="#e9d1c5">oklch(0.351 0.021 52.0)</text>
   </g>
 
   <g transform="translate(0 120)">
     <rect width="180" height="120" fill="#5f5049" />
     <text class="hex" x="90" y="48" fill="#e9d1c5">#5F5049</text>
-    <text class="name" x="90" y="74" fill="#e9d1c5">overlay</text>
+    <text class="oklch" x="90" y="74" fill="#e9d1c5">oklch(0.444 0.023 46.5)</text>
   </g>
 
   <g transform="translate(180 120)">
     <rect width="180" height="120" fill="#a39086" />
     <text class="hex" x="90" y="48" fill="#15110f">#A39086</text>
-    <text class="name" x="90" y="74" fill="#15110f">text subtle</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.667 0.027 49.6)</text>
   </g>
 
   <g transform="translate(360 120)">
     <rect width="180" height="120" fill="#b5a196" />
     <text class="hex" x="90" y="48" fill="#15110f">#B5A196</text>
-    <text class="name" x="90" y="74" fill="#15110f">text secondary</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.723 0.028 50.7)</text>
   </g>
 
   <g transform="translate(540 120)">
     <rect width="180" height="120" fill="#c5afa4" />
     <text class="hex" x="90" y="48" fill="#15110f">#C5AFA4</text>
-    <text class="name" x="90" y="74" fill="#15110f">text</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.770 0.030 48.3)</text>
   </g>
 
   <g transform="translate(0 240)">
     <rect width="180" height="120" fill="#e9d1c5" />
     <text class="hex" x="90" y="48" fill="#15110f">#E9D1C5</text>
-    <text class="name" x="90" y="74" fill="#15110f">text bright</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.877 0.032 48.3)</text>
   </g>
 
   <g transform="translate(180 240)">
     <rect width="180" height="120" fill="#a45751" />
     <text class="hex" x="90" y="48" fill="#15110f">#A45751</text>
-    <text class="name" x="90" y="74" fill="#15110f">error</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.547 0.102 25.6)</text>
   </g>
 
   <g transform="translate(360 240)">
     <rect width="180" height="120" fill="#f1a278" />
     <text class="hex" x="90" y="48" fill="#15110f">#F1A278</text>
-    <text class="name" x="90" y="74" fill="#15110f">primary</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.781 0.110 48.6)</text>
   </g>
 
   <g transform="translate(540 240)">
     <rect width="180" height="120" fill="#d98c63" />
     <text class="hex" x="90" y="48" fill="#15110f">#D98C63</text>
-    <text class="name" x="90" y="74" fill="#15110f">secondary</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.710 0.109 48.4)</text>
   </g>
 
   <g transform="translate(0 360)">
     <rect width="180" height="120" fill="#ffbd9b" />
     <text class="hex" x="90" y="48" fill="#15110f">#FFBD9B</text>
-    <text class="name" x="90" y="74" fill="#15110f">warning</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.851 0.089 48.4)</text>
   </g>
 
   <g transform="translate(180 360)">
     <rect width="180" height="120" fill="#944d24" />
     <text class="hex" x="90" y="48" fill="#15110f">#944D24</text>
-    <text class="name" x="90" y="74" fill="#15110f">info</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.499 0.110 48.2)</text>
   </g>
 
   <g transform="translate(360 360)">
     <rect width="180" height="120" fill="#ab6139" />
     <text class="hex" x="90" y="48" fill="#15110f">#AB6139</text>
-    <text class="name" x="90" y="74" fill="#15110f">purple (ANSI)</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.569 0.110 47.8)</text>
   </g>
 
   <g transform="translate(540 360)">
     <rect width="180" height="120" fill="#c2764e" />
     <text class="hex" x="90" y="48" fill="#15110f">#C2764E</text>
-    <text class="name" x="90" y="74" fill="#15110f">cyan (ANSI)</text>
+    <text class="oklch" x="90" y="74" fill="#15110f">oklch(0.639 0.110 47.8)</text>
   </g>
 
   <text class="knobs" x="360" y="504">seed L 0.685 C 0.147 H 48.2  |  accentChroma 0.11  |  accentLadder 0.85-0.5  |  neutralChromaScale 1.8  |  errorChromaScale 0.75</text>

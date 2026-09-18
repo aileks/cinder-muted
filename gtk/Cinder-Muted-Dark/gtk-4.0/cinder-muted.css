@@ -11,8 +11,8 @@
 @define-color cinder_error #a45751;
 @define-color cinder_warning #ffbd9b;
 @define-color cinder_info #944d24;
-@define-color cinder_purple #ab6139;
-@define-color cinder_cyan #c2764e;
+@define-color cinder_tertiary #ab6139;
+@define-color cinder_quaternary #c2764e;
 
 @define-color destructive_bg_color @cinder_error;
 @define-color destructive_fg_color white;

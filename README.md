@@ -26,12 +26,12 @@ A muted, monochrome dark theme.
 
 ```sh
 pnpm install
-pnpm build   # render every generated file
+pnpm build   # render palette.svg and the Neovim palette
 pnpm check   # fail if committed outputs are out of sync
 pnpm test
 ```
 
-The palette lives in `src/palette.ts`. `templates/` holds one upstream config per port; when a port changes, copy the new file in and re-render. The Neovim palette renders into the `nvim/` submodule, so commit inside the submodule first, then the new pointer here.
+The palette lives in `src/palette.ts`; `terminalColors()` defines the ANSI 16 used by the terminal ports. Port files are maintained directly with their final colors, so edit them by hand. Only `palette.svg` and the Neovim palette are generated, and the Neovim palette renders into the `nvim/` submodule, so commit inside the submodule first, then the new pointer here.
 
 ## License
 

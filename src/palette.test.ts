@@ -1,18 +1,19 @@
+import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { oklch, parse } from 'culori'
 import {
   ACCENT_SLOTS,
   KNOBS,
   SOURCE_COLORS,
-  TERMINAL_SLOTS,
   ladderLightness,
   palette,
   seed,
-  toneMap,
+  terminalColors,
 } from './palette.ts'
 
 const hue = (hex: string) => oklch(parse(hex)!)!.h!
 const chroma = (hex: string) => oklch(parse(hex)!)!.c
+const lightness = (hex: string) => oklch(parse(hex)!)!.l
 
 describe('seed', () => {
   it('at blendRatio 0 is the source primary', () => {
@@ -87,15 +88,62 @@ describe('ladderLightness', () => {
   })
 })
 
-describe('toneMap', () => {
-  it('keys hex and rgb decimal forms identically', () => {
-    const map = toneMap()
-    expect(map.get('#131210')).toBe(map.get('19,18,16'))
+describe('terminalColors', () => {
+  const p = palette()
+  const t = terminalColors(p)
+
+  it('passes the non-accent slots through untouched', () => {
+    expect(t[0]).toBe(p.background)
+    expect(t[1]).toBe(p.error)
+    expect(t[7]).toBe(p.text_secondary)
+    expect(t[8]).toBe(p.overlay)
+    expect(t[9]).toBe(p.primary)
+    expect(t[15]).toBe(p.text_bright)
   })
 
-  it('covers the terminal slots', () => {
-    for (const slot of TERMINAL_SLOTS) {
-      expect(toneMap().get(SOURCE_COLORS[slot].toLowerCase()), slot).toBeDefined()
+  it('keeps every accent at or above the floor', () => {
+    for (const index of [2, 3, 4, 5, 6, 10, 11, 12, 13, 14]) {
+      expect(lightness(t[index]!), `color${index}`).toBeGreaterThanOrEqual(
+        KNOBS.terminalFloor - 0.01,
+      )
     }
+  })
+
+  it('lifts each bright accent above its normal counterpart', () => {
+    for (const [bright, normal] of [
+      [10, 2],
+      [11, 3],
+      [12, 4],
+      [13, 5],
+      [14, 6],
+    ] as const) {
+      const expected = Math.min(
+        KNOBS.terminalBrightCap,
+        lightness(t[normal]!) + KNOBS.terminalBrightLift,
+      )
+      expect(lightness(t[bright]!), `color${bright}`).toBeCloseTo(expected, 2)
+    }
+  })
+
+  it('keeps all sixteen colors distinct', () => {
+    expect(new Set(t).size).toBe(16)
+  })
+})
+
+describe('terminal files', () => {
+  it('xrdb and st carry the same sixteen colors as terminalColors', () => {
+    const expected = terminalColors(palette()).map((hex) => hex.toUpperCase())
+    const xrdbColors = [
+      ...readFileSync('xresources/cinder-muted.xrdb', 'utf8').matchAll(
+        /^\*\.color(\d+):\s+(#[0-9A-F]{6})$/gm,
+      ),
+    ]
+      .sort((a, b) => Number(a[1]) - Number(b[1]))
+      .map((match) => match[2]!)
+    const stColors = [
+      ...readFileSync('st/config.def.h', 'utf8').matchAll(/^\t"(#[0-9A-F]{6})",$/gm),
+    ].map((match) => match[1]!)
+    expect(xrdbColors).toEqual(expected)
+    expect(stColors).toEqual(expected)
   })
 })
