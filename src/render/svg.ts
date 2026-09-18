@@ -61,7 +61,7 @@ export function renderSvg(palette: Record<SourceSlot, string>): string {
   aria-labelledby="title desc"
 >
   <title id="title">Cinder Muted color palette</title>
-  <desc id="desc">Tones of a single muted ember blended from Cinder Grove's primary and secondary, with a red exception for errors.</desc>
+  <desc id="desc">Tones of a single muted ember, with a red exception for errors.</desc>
 
   <style>
     .hex {

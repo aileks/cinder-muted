@@ -34,7 +34,7 @@ export function renderGtkIndex(): string {
   return `[X-GNOME-Metatheme]
 Name=Cinder Muted Dark
 Type=X-GNOME-Metatheme
-Comment=Monochrome ember variant of the Cinder Grove theme
+Comment=Muted, monochrome dark theme
 Encoding=UTF-8
 GtkTheme=Cinder-Muted-Dark
 `

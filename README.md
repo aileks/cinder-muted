@@ -1,6 +1,6 @@
 # Cinder Muted
 
-Muted monochrome variant of my [Cinder Grove](https://github.com/aileks/cinder-grove.nvim) theme.
+A muted, monochrome dark theme.
 
 ![Cinder Muted color palette](./palette.svg)
 
@@ -31,7 +31,7 @@ pnpm check   # fail if committed outputs are out of sync
 pnpm test
 ```
 
-The palette derives from the Cinder Grove colors in `src/palette.ts`. `templates/` holds one upstream config per port; when a port changes, copy the new file in and re-render. The Neovim palette renders into the `nvim/` submodule, so commit inside the submodule first, then the new pointer here.
+The palette lives in `src/palette.ts`. `templates/` holds one upstream config per port; when a port changes, copy the new file in and re-render. The Neovim palette renders into the `nvim/` submodule, so commit inside the submodule first, then the new pointer here.
 
 ## License
 

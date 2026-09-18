@@ -1,7 +1,7 @@
 import { clampChroma, formatHex, oklch, parse } from 'culori'
 import type { Oklch } from 'culori'
 
-// Cinder Grove's colors.
+// The source colors the theme is built from.
 export const SOURCE_COLORS = {
   visual: '#3E3A34',
   background: '#131210',
