@@ -23,8 +23,8 @@ export function renderYaziThemeToml(palette: Record<GroveSlot, string>): string 
 [filetype]
 "rules" = [
   { "fg" = "${p.text_bright}", "url" = "*/" },
-  { "fg" = "${p.primary}", "is" = "exec" },
-  { "fg" = "${p.error}", "is" = "orphan" },
+  { "fg" = "${p.primary}", "is" = "exec", "url" = "*" },
+  { "fg" = "${p.error}", "is" = "orphan", "url" = "*" },
   { "fg" = "${p.warning}", "mime" = "**/image/*" },
   { "fg" = "${p.secondary}", "mime" = "**/{audio,video}/*" },
   { "fg" = "${p.error}", "mime" = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}" },
