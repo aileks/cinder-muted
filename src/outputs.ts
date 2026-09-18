@@ -1,8 +1,7 @@
-import { existsSync, readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { renderSvg } from './render/svg.ts'
 import { palette, toneMap } from './palette.ts'
 import { renderNvimPalette } from './render/nvim.ts'
-import { renderStylus, renderStylusSite, SITES } from './render/stylus.ts'
 import { renderYaziThemeToml } from './render/yazi.ts'
 import { renderEmacs } from './render/emacs.ts'
 import { renderXresources } from './render/xresources.ts'
@@ -49,15 +48,5 @@ export function renderOutputs(): Map<string, string> {
       'yazi/cinder-muted.tmTheme',
       configs.renderYaziTheme(template('yazi/cinder-grove.tmTheme'), tones),
     ],
-    ['stylus/global/cinder-muted.user.css', renderStylus(p)],
-    ...SITES.filter((site) => {
-      const path = `templates/stylus/${site.slug}.css`
-      if (existsSync(path)) return true
-      console.error(`skipping stylus/${site.slug}: no template yet`)
-      return false
-    }).map((site) => [
-      `stylus/${site.slug}/cinder-muted.user.css`,
-      renderStylusSite(site, template(`stylus/${site.slug}.css`), tones),
-    ] as const),
   ])
 }

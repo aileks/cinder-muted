@@ -8,7 +8,7 @@ Copy the palette into a qt6ct color directory:
 sudo cp cinder-muted.conf /usr/local/share/qt6ct/colors/
 ```
 
-Then set it in `~/.config/qt6ct/qt6ct.conf`:
+Then set it in `~/.config/qt6ct/qt6ct.conf` (or use the GUI):
 
 ```
 [Appearance]
