@@ -10,6 +10,8 @@ Add the colors to `~/.Xresources` with an include:
 #include "/path/to/cinder-muted/xresources/cinder-muted.xrdb"
 ```
 
+Or just copy and paste them int `~/.Xresources` directly.
+
 Then reload:
 
 ```sh
