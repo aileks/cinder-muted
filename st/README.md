@@ -14,10 +14,10 @@ rm -f config.h
 make clean install
 ```
 
-The 256-261 extras and the selection indexes are part of current st;
-st-flexipatch users need `SELECTION_COLORS_PATCH` enabled for the selection
-lines. `highlightfg`, `highlightbg`, and entry 261 come from a search patch,
-so drop those three lines if your build has no search support.
+The 256-261 extras and the selection indexes are part of current st; the
+selection lines need the selection colors patch (`SELECTION_COLORS_PATCH`).
+`highlightfg`, `highlightbg`, and entry 261 come from a search patch, so
+drop those three lines if your build has no search support.
 
 The 16 colors match `terminalColors()` in `src/palette.ts` and
 `xresources/cinder-muted.xrdb`, so st renders the same ANSI palette as the
